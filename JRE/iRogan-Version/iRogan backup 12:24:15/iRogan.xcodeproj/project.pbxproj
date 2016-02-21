@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B40C5AF21C14DDC7007F2860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5AF11C14DDC7007F2860 /* AppDelegate.swift */; };
+		B40C5AF71C14DDC7007F2860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40C5AF51C14DDC7007F2860 /* Main.storyboard */; };
+		B40C5AFA1C14DDC7007F2860 /* iRogan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B40C5AF81C14DDC7007F2860 /* iRogan.xcdatamodeld */; };
+		B40C5AFC1C14DDC7007F2860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40C5AFB1C14DDC7007F2860 /* Assets.xcassets */; };
+		B40C5AFF1C14DDC7007F2860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40C5AFD1C14DDC7007F2860 /* LaunchScreen.storyboard */; };
+		B40C5B0A1C14DDC7007F2860 /* iRoganTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B091C14DDC7007F2860 /* iRoganTests.swift */; };
+		B40C5B151C14DDC7007F2860 /* iRoganUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B141C14DDC7007F2860 /* iRoganUITests.swift */; };
+		B40C5B291C14E726007F2860 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B281C14E726007F2860 /* MainViewController.swift */; };
+		B40C5B2B1C14E738007F2860 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B2A1C14E738007F2860 /* PlayerViewController.swift */; };
+		B40C5B2D1C14E74E007F2860 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B2C1C14E74E007F2860 /* InfoViewController.swift */; };
+		B40C5B301C14E7BB007F2860 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B2F1C14E7BB007F2860 /* EpisodeTableViewCell.swift */; };
+		B40C5B331C14E9B9007F2860 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B321C14E9B9007F2860 /* DataManager.swift */; };
+		B40C5B351C14E9C6007F2860 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B341C14E9C6007F2860 /* FeedManager.swift */; };
+		B40C5B371C14E9D1007F2860 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C5B361C14E9D1007F2860 /* NetworkManager.swift */; };
+		B41F002F1C1F2604004F0D5C /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F002E1C1F2604004F0D5C /* PlayerManager.swift */; };
+		B41F00381C1F44F8004F0D5C /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F00361C1F44F8004F0D5C /* Episode+CoreDataProperties.swift */; };
+		B41F00391C1F44F8004F0D5C /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F00371C1F44F8004F0D5C /* Episode.swift */; };
+		B4459DA71C1B47B000AC31E9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B4459DA61C1B47B000AC31E9 /* Reachability.m */; };
+		B499D29E1C15CCD9006E1631 /* jreColors+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B499D29D1C15CCD9006E1631 /* jreColors+UIColor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B40C5B061C14DDC7007F2860 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B40C5AE61C14DDC7007F2860 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B40C5AED1C14DDC7007F2860;
+			remoteInfo = iRogan;
+		};
+		B40C5B111C14DDC7007F2860 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B40C5AE61C14DDC7007F2860 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B40C5AED1C14DDC7007F2860;
+			remoteInfo = iRogan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B40C5AEE1C14DDC7007F2860 /* iRogan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRogan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40C5AF11C14DDC7007F2860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B40C5AF61C14DDC7007F2860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B40C5AF91C14DDC7007F2860 /* iRogan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iRogan.xcdatamodel; sourceTree = "<group>"; };
+		B40C5AFB1C14DDC7007F2860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B40C5AFE1C14DDC7007F2860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B40C5B001C14DDC7007F2860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B40C5B051C14DDC7007F2860 /* iRoganTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRoganTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40C5B091C14DDC7007F2860 /* iRoganTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRoganTests.swift; sourceTree = "<group>"; };
+		B40C5B0B1C14DDC7007F2860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B40C5B101C14DDC7007F2860 /* iRoganUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRoganUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40C5B141C14DDC7007F2860 /* iRoganUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRoganUITests.swift; sourceTree = "<group>"; };
+		B40C5B161C14DDC7007F2860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B40C5B281C14E726007F2860 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B40C5B2A1C14E738007F2860 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		B40C5B2C1C14E74E007F2860 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B40C5B2F1C14E7BB007F2860 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		B40C5B321C14E9B9007F2860 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B40C5B341C14E9C6007F2860 /* FeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
+		B40C5B361C14E9D1007F2860 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B41F00291C1F18A8004F0D5C /* iRogan 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iRogan 4.xcdatamodel"; sourceTree = "<group>"; };
+		B41F002E1C1F2604004F0D5C /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		B41F00301C1F3F99004F0D5C /* iRogan 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iRogan 5.xcdatamodel"; sourceTree = "<group>"; };
+		B41F00351C1F44DC004F0D5C /* iRogan 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iRogan 6.xcdatamodel"; sourceTree = "<group>"; };
+		B41F00361C1F44F8004F0D5C /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B41F00371C1F44F8004F0D5C /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		B4459DA41C1B47AF00AC31E9 /* iRogan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iRogan-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4459DA51C1B47B000AC31E9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B4459DA61C1B47B000AC31E9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B499D29D1C15CCD9006E1631 /* jreColors+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "jreColors+UIColor.swift"; path = "iRogan/jreColors+UIColor.swift"; sourceTree = "<group>"; };
+		B4E768D11C17398E00CB4D21 /* iRogan 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iRogan 2.xcdatamodel"; sourceTree = "<group>"; };
+		B4E768D61C173C3400CB4D21 /* iRogan 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iRogan 3.xcdatamodel"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B40C5AEB1C14DDC7007F2860 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B40C5B021C14DDC7007F2860 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B40C5B0D1C14DDC7007F2860 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B40C5AE51C14DDC7007F2860 = {
+			isa = PBXGroup;
+			children = (
+				B40C5AF01C14DDC7007F2860 /* iRogan */,
+				B40C5B081C14DDC7007F2860 /* iRoganTests */,
+				B40C5B131C14DDC7007F2860 /* iRoganUITests */,
+				B40C5AEF1C14DDC7007F2860 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B40C5AEF1C14DDC7007F2860 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5AEE1C14DDC7007F2860 /* iRogan.app */,
+				B40C5B051C14DDC7007F2860 /* iRoganTests.xctest */,
+				B40C5B101C14DDC7007F2860 /* iRoganUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B40C5AF01C14DDC7007F2860 /* iRogan */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5AF11C14DDC7007F2860 /* AppDelegate.swift */,
+				B40C5B261C14E659007F2860 /* Data */,
+				B40C5B2E1C14E764007F2860 /* ViewControllers */,
+				B40C5B311C14E7BF007F2860 /* TableView Cells */,
+				B40C5B3A1C14EA4B007F2860 /* Extensions */,
+				B40C5B271C14E66D007F2860 /* StoryBoards */,
+				B40C5AFB1C14DDC7007F2860 /* Assets.xcassets */,
+				B4459DA41C1B47AF00AC31E9 /* iRogan-Bridging-Header.h */,
+			);
+			path = iRogan;
+			sourceTree = "<group>";
+		};
+		B40C5B081C14DDC7007F2860 /* iRoganTests */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5B091C14DDC7007F2860 /* iRoganTests.swift */,
+				B40C5B0B1C14DDC7007F2860 /* Info.plist */,
+			);
+			path = iRoganTests;
+			sourceTree = "<group>";
+		};
+		B40C5B131C14DDC7007F2860 /* iRoganUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5B141C14DDC7007F2860 /* iRoganUITests.swift */,
+				B40C5B161C14DDC7007F2860 /* Info.plist */,
+			);
+			path = iRoganUITests;
+			sourceTree = "<group>";
+		};
+		B40C5B261C14E659007F2860 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5B361C14E9D1007F2860 /* NetworkManager.swift */,
+				B40C5B341C14E9C6007F2860 /* FeedManager.swift */,
+				B40C5B321C14E9B9007F2860 /* DataManager.swift */,
+				B41F002E1C1F2604004F0D5C /* PlayerManager.swift */,
+				B41F00361C1F44F8004F0D5C /* Episode+CoreDataProperties.swift */,
+				B41F00371C1F44F8004F0D5C /* Episode.swift */,
+				B4459DA51C1B47B000AC31E9 /* Reachability.h */,
+				B4459DA61C1B47B000AC31E9 /* Reachability.m */,
+				B40C5B001C14DDC7007F2860 /* Info.plist */,
+				B40C5AF81C14DDC7007F2860 /* iRogan.xcdatamodeld */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		B40C5B271C14E66D007F2860 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5AF51C14DDC7007F2860 /* Main.storyboard */,
+				B40C5AFD1C14DDC7007F2860 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		B40C5B2E1C14E764007F2860 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5B2C1C14E74E007F2860 /* InfoViewController.swift */,
+				B40C5B281C14E726007F2860 /* MainViewController.swift */,
+				B40C5B2A1C14E738007F2860 /* PlayerViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B40C5B311C14E7BF007F2860 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B40C5B2F1C14E7BB007F2860 /* EpisodeTableViewCell.swift */,
+			);
+			name = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		B40C5B3A1C14EA4B007F2860 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B499D29D1C15CCD9006E1631 /* jreColors+UIColor.swift */,
+			);
+			name = Extensions;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B40C5AED1C14DDC7007F2860 /* iRogan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B40C5B191C14DDC7007F2860 /* Build configuration list for PBXNativeTarget "iRogan" */;
+			buildPhases = (
+				B40C5AEA1C14DDC7007F2860 /* Sources */,
+				B40C5AEB1C14DDC7007F2860 /* Frameworks */,
+				B40C5AEC1C14DDC7007F2860 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iRogan;
+			productName = iRogan;
+			productReference = B40C5AEE1C14DDC7007F2860 /* iRogan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B40C5B041C14DDC7007F2860 /* iRoganTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B40C5B1C1C14DDC7007F2860 /* Build configuration list for PBXNativeTarget "iRoganTests" */;
+			buildPhases = (
+				B40C5B011C14DDC7007F2860 /* Sources */,
+				B40C5B021C14DDC7007F2860 /* Frameworks */,
+				B40C5B031C14DDC7007F2860 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B40C5B071C14DDC7007F2860 /* PBXTargetDependency */,
+			);
+			name = iRoganTests;
+			productName = iRoganTests;
+			productReference = B40C5B051C14DDC7007F2860 /* iRoganTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B40C5B0F1C14DDC7007F2860 /* iRoganUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B40C5B1F1C14DDC7007F2860 /* Build configuration list for PBXNativeTarget "iRoganUITests" */;
+			buildPhases = (
+				B40C5B0C1C14DDC7007F2860 /* Sources */,
+				B40C5B0D1C14DDC7007F2860 /* Frameworks */,
+				B40C5B0E1C14DDC7007F2860 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B40C5B121C14DDC7007F2860 /* PBXTargetDependency */,
+			);
+			name = iRoganUITests;
+			productName = iRoganUITests;
+			productReference = B40C5B101C14DDC7007F2860 /* iRoganUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B40C5AE61C14DDC7007F2860 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Blake Oistad";
+				TargetAttributes = {
+					B40C5AED1C14DDC7007F2860 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = GHHBHG4T97;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					B40C5B041C14DDC7007F2860 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = B40C5AED1C14DDC7007F2860;
+					};
+					B40C5B0F1C14DDC7007F2860 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = B40C5AED1C14DDC7007F2860;
+					};
+				};
+			};
+			buildConfigurationList = B40C5AE91C14DDC7007F2860 /* Build configuration list for PBXProject "iRogan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B40C5AE51C14DDC7007F2860;
+			productRefGroup = B40C5AEF1C14DDC7007F2860 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B40C5AED1C14DDC7007F2860 /* iRogan */,
+				B40C5B041C14DDC7007F2860 /* iRoganTests */,
+				B40C5B0F1C14DDC7007F2860 /* iRoganUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B40C5AEC1C14DDC7007F2860 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40C5AFF1C14DDC7007F2860 /* LaunchScreen.storyboard in Resources */,
+				B40C5AFC1C14DDC7007F2860 /* Assets.xcassets in Resources */,
+				B40C5AF71C14DDC7007F2860 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B40C5B031C14DDC7007F2860 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B40C5B0E1C14DDC7007F2860 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B40C5AEA1C14DDC7007F2860 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4459DA71C1B47B000AC31E9 /* Reachability.m in Sources */,
+				B40C5AFA1C14DDC7007F2860 /* iRogan.xcdatamodeld in Sources */,
+				B40C5B351C14E9C6007F2860 /* FeedManager.swift in Sources */,
+				B40C5B301C14E7BB007F2860 /* EpisodeTableViewCell.swift in Sources */,
+				B40C5B371C14E9D1007F2860 /* NetworkManager.swift in Sources */,
+				B499D29E1C15CCD9006E1631 /* jreColors+UIColor.swift in Sources */,
+				B40C5B2D1C14E74E007F2860 /* InfoViewController.swift in Sources */,
+				B40C5AF21C14DDC7007F2860 /* AppDelegate.swift in Sources */,
+				B41F002F1C1F2604004F0D5C /* PlayerManager.swift in Sources */,
+				B41F00391C1F44F8004F0D5C /* Episode.swift in Sources */,
+				B40C5B291C14E726007F2860 /* MainViewController.swift in Sources */,
+				B40C5B331C14E9B9007F2860 /* DataManager.swift in Sources */,
+				B40C5B2B1C14E738007F2860 /* PlayerViewController.swift in Sources */,
+				B41F00381C1F44F8004F0D5C /* Episode+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B40C5B011C14DDC7007F2860 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40C5B0A1C14DDC7007F2860 /* iRoganTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B40C5B0C1C14DDC7007F2860 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40C5B151C14DDC7007F2860 /* iRoganUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B40C5B071C14DDC7007F2860 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B40C5AED1C14DDC7007F2860 /* iRogan */;
+			targetProxy = B40C5B061C14DDC7007F2860 /* PBXContainerItemProxy */;
+		};
+		B40C5B121C14DDC7007F2860 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B40C5AED1C14DDC7007F2860 /* iRogan */;
+			targetProxy = B40C5B111C14DDC7007F2860 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B40C5AF51C14DDC7007F2860 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B40C5AF61C14DDC7007F2860 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B40C5AFD1C14DDC7007F2860 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B40C5AFE1C14DDC7007F2860 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B40C5B171C14DDC7007F2860 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B40C5B181C14DDC7007F2860 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B40C5B1A1C14DDC7007F2860 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = iRogan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.iRogan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iRogan/iRogan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B40C5B1B1C14DDC7007F2860 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = iRogan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.iRogan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iRogan/iRogan-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		B40C5B1D1C14DDC7007F2860 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iRoganTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.iRoganTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRogan.app/iRogan";
+			};
+			name = Debug;
+		};
+		B40C5B1E1C14DDC7007F2860 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iRoganTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.iRoganTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRogan.app/iRogan";
+			};
+			name = Release;
+		};
+		B40C5B201C14DDC7007F2860 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iRoganUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.iRoganUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iRogan;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B40C5B211C14DDC7007F2860 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iRoganUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.iRoganUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iRogan;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B40C5AE91C14DDC7007F2860 /* Build configuration list for PBXProject "iRogan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B40C5B171C14DDC7007F2860 /* Debug */,
+				B40C5B181C14DDC7007F2860 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B40C5B191C14DDC7007F2860 /* Build configuration list for PBXNativeTarget "iRogan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B40C5B1A1C14DDC7007F2860 /* Debug */,
+				B40C5B1B1C14DDC7007F2860 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B40C5B1C1C14DDC7007F2860 /* Build configuration list for PBXNativeTarget "iRoganTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B40C5B1D1C14DDC7007F2860 /* Debug */,
+				B40C5B1E1C14DDC7007F2860 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B40C5B1F1C14DDC7007F2860 /* Build configuration list for PBXNativeTarget "iRoganUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B40C5B201C14DDC7007F2860 /* Debug */,
+				B40C5B211C14DDC7007F2860 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B40C5AF81C14DDC7007F2860 /* iRogan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B41F00351C1F44DC004F0D5C /* iRogan 6.xcdatamodel */,
+				B41F00301C1F3F99004F0D5C /* iRogan 5.xcdatamodel */,
+				B41F00291C1F18A8004F0D5C /* iRogan 4.xcdatamodel */,
+				B4E768D61C173C3400CB4D21 /* iRogan 3.xcdatamodel */,
+				B4E768D11C17398E00CB4D21 /* iRogan 2.xcdatamodel */,
+				B40C5AF91C14DDC7007F2860 /* iRogan.xcdatamodel */,
+			);
+			currentVersion = B41F00351C1F44DC004F0D5C /* iRogan 6.xcdatamodel */;
+			path = iRogan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B40C5AE61C14DDC7007F2860 /* Project object */;
+}

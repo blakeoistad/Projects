@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Automatic">
+    <entity name="Episode" representedClassName=".Episode" syncable="YES">
+        <attribute name="dateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="episodeDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="episodeDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="episodeGuests" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="episodeImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="episodeLinks" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="episodeNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="episodeSponsors" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="episodeTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipToGuest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Guest" inverseName="relationshipToEpisode" inverseEntity="Guest" syncable="YES"/>
+    </entity>
+    <entity name="Guest" representedClassName=".Guest" syncable="YES">
+        <attribute name="guestFacebookID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestTwitterID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestWebsite" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipToEpisode" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Episode" inverseName="relationshipToGuest" inverseEntity="Episode" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Episode" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="Guest" positionX="126" positionY="-18" width="128" height="133"/>
+    </elements>
+</model>
