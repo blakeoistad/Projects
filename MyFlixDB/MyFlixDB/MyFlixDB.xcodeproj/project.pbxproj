@@ -17,6 +17,9 @@
 		B47FC57A1C7A4E7E001EDFAF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC5761C7A4E7E001EDFAF /* Collection.swift */; };
 		B47FC57B1C7A4E7E001EDFAF /* Flick+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC5771C7A4E7E001EDFAF /* Flick+CoreDataProperties.swift */; };
 		B47FC57C1C7A4E7E001EDFAF /* Flick.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC5781C7A4E7E001EDFAF /* Flick.swift */; };
+		B47FC57F1C7A5065001EDFAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC57E1C7A5065001EDFAF /* DataManager.swift */; };
+		B47FC5811C7A56A6001EDFAF /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC5801C7A56A6001EDFAF /* GenreViewController.swift */; };
+		B47FC5831C7A66A2001EDFAF /* NewFlickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC5821C7A66A2001EDFAF /* NewFlickViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		B47FC5761C7A4E7E001EDFAF /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Collection.swift; path = MyFlixDB/Collection.swift; sourceTree = "<group>"; };
 		B47FC5771C7A4E7E001EDFAF /* Flick+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Flick+CoreDataProperties.swift"; path = "MyFlixDB/Flick+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B47FC5781C7A4E7E001EDFAF /* Flick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flick.swift; path = MyFlixDB/Flick.swift; sourceTree = "<group>"; };
+		B47FC57E1C7A5065001EDFAF /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = MyFlixDB/DataManager.swift; sourceTree = "<group>"; };
+		B47FC5801C7A56A6001EDFAF /* GenreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
+		B47FC5821C7A66A2001EDFAF /* NewFlickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFlickViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,8 @@
 			children = (
 				B47FC55C1C7A4412001EDFAF /* AppDelegate.swift */,
 				B47FC5731C7A4CA7001EDFAF /* BrowseViewController.swift */,
+				B47FC5801C7A56A6001EDFAF /* GenreViewController.swift */,
+				B47FC5821C7A66A2001EDFAF /* NewFlickViewController.swift */,
 				B47FC5601C7A4412001EDFAF /* Main.storyboard */,
 				B47FC5661C7A4412001EDFAF /* Assets.xcassets */,
 				B47FC5681C7A4412001EDFAF /* LaunchScreen.storyboard */,
@@ -77,6 +85,7 @@
 		B47FC57D1C7A4E83001EDFAF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B47FC57E1C7A5065001EDFAF /* DataManager.swift */,
 				B47FC5751C7A4E7E001EDFAF /* Collection+CoreDataProperties.swift */,
 				B47FC5761C7A4E7E001EDFAF /* Collection.swift */,
 				B47FC5771C7A4E7E001EDFAF /* Flick+CoreDataProperties.swift */,
@@ -160,12 +169,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47FC57C1C7A4E7E001EDFAF /* Flick.swift in Sources */,
+				B47FC57F1C7A5065001EDFAF /* DataManager.swift in Sources */,
 				B47FC5741C7A4CA7001EDFAF /* BrowseViewController.swift in Sources */,
 				B47FC57B1C7A4E7E001EDFAF /* Flick+CoreDataProperties.swift in Sources */,
 				B47FC57A1C7A4E7E001EDFAF /* Collection.swift in Sources */,
 				B47FC5791C7A4E7E001EDFAF /* Collection+CoreDataProperties.swift in Sources */,
+				B47FC5811C7A56A6001EDFAF /* GenreViewController.swift in Sources */,
 				B47FC5651C7A4412001EDFAF /* MyFlixDB.xcdatamodeld in Sources */,
 				B47FC55D1C7A4412001EDFAF /* AppDelegate.swift in Sources */,
+				B47FC5831C7A66A2001EDFAF /* NewFlickViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

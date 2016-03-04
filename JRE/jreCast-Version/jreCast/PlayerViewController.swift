@@ -14,7 +14,7 @@ class PlayerViewController: UIViewController {
 
     //MARK: - Properties
     
-    var dataManager = DataManager()
+    var dataManager = DataManager.sharedInstance
     
     @IBOutlet var playPauseButton: UIButton!
     @IBOutlet var volumeSlider: UISlider!
