@@ -40,6 +40,8 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(dataManager.genresArray.count) Genres in genreArray")
+//        dataManager.tempAddRecords()
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,10 +8,25 @@
 
 import UIKit
 
-class GenreViewController: UIViewController {
+class GenreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //MARK: - Properties
+    var dataManager = DataManager.sharedInstance
     var selectedGenre: String?
+    
+    
+    
+    //MARK: - Table View Methods
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataManager.flicksArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("flickCell", forIndexPath: indexPath)
+//        cell.textLabel!.text = dataManager.flicksArray[indexPath.row]
+        return cell
+    }
     
     //MARK: - Life Cycle Methods
     

@@ -16,9 +16,15 @@ class DataManager: NSObject {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let managedObjectContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var genresArray = ["Horror", "Action-Adventure", "Fantasy-Animation", "Documentary", "Drama", "Comedy", "Sci-Fi", "Mystery-Thriller"]
+    var flicksArray = [Flick]()
     
     func tempAddRecords() {
         let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: managedObjectContext)
+        let currentFlick :Flick! = Flick(entity: entityDescription, insertIntoManagedObjectContext: managedObjectContext)
+        currentFlick.flickTitle = "Jurassic Park"
+        currentFlick.flickSummary = "A bunch of dumb people go to an island filled with live dinosaurs, assuming nothing bad will happen."
+        currentFlick.flickGenre = "Action-Adventure"
+        currentFlick.flickDirector = "Stephen Speilberg"
     }
     
     

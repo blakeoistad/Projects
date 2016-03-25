@@ -2,7 +2,7 @@
 //  Collection+CoreDataProperties.swift
 //  MyFlixDB
 //
-//  Created by Blake Oistad on 2/21/16.
+//  Created by Blake Oistad on 3/25/16.
 //  Copyright © 2016 Blake Oistad. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,10 +14,10 @@ import CoreData
 
 extension Collection {
 
-    @NSManaged var collectionName: String?
     @NSManaged var collectionChildren: NSNumber?
     @NSManaged var collectionImgNamed: String?
+    @NSManaged var collectionName: String?
     @NSManaged var collectionType: String?
-    @NSManaged var relationshipToFlick: NSManagedObject?
+    @NSManaged var relationshipToFlick: Flick?
 
 }

@@ -98,8 +98,15 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="emg-Fh-tgU" kind="show" id="VKA-a8-dvs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ahW-A9-Hbe" id="OpZ-Ba-Vrk"/>
+                                    <outlet property="delegate" destination="ahW-A9-Hbe" id="Kp1-Ka-HnA"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +155,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-S8-1hn">
+                                <rect key="frame" x="0.0" y="139" width="600" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="PEz-dh-vBf"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,8 +168,11 @@
                             <constraint firstAttribute="leadingMargin" secondItem="y7b-g1-lLC" secondAttribute="leading" id="Gpw-cQ-bDC"/>
                             <constraint firstItem="y7b-g1-lLC" firstAttribute="top" secondItem="e4q-Mk-IY9" secondAttribute="bottom" constant="8" id="JtP-1b-Lbw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y7b-g1-lLC" secondAttribute="trailing" id="RF0-Hp-D3e"/>
+                            <constraint firstItem="5YP-S8-1hn" firstAttribute="top" secondItem="y7b-g1-lLC" secondAttribute="bottom" constant="8" id="h3s-aF-GaF"/>
+                            <constraint firstItem="5YP-S8-1hn" firstAttribute="leading" secondItem="dPH-d7-rlD" secondAttribute="leadingMargin" constant="-20" id="jKr-Mr-HpP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="e4q-Mk-IY9" secondAttribute="leading" id="kra-9u-EV5"/>
                             <constraint firstItem="e4q-Mk-IY9" firstAttribute="top" secondItem="7pu-f5-BIf" secondAttribute="bottom" constant="8" id="mQS-FK-xgB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5YP-S8-1hn" secondAttribute="trailing" constant="-20" id="zWe-Rp-XT2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Flick" id="9L7-Lw-vtZ">
@@ -169,7 +185,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xm9-CK-glm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2383" y="-335"/>
+            <point key="canvasLocation" x="2449" y="-620"/>
+        </scene>
+        <!--currentFlick-->
+        <scene sceneID="Z2K-xL-1iA">
+            <objects>
+                <viewController id="emg-Fh-tgU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qxG-WU-iDA"/>
+                        <viewControllerLayoutGuide type="bottom" id="6vz-Qe-KZr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t7W-w8-NHP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-zB-xMr">
+                                <rect key="frame" x="20" y="72" width="560" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="2Gy-jI-aq9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="5F3-zB-xMr" secondAttribute="leading" id="9g4-Mr-4P6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5F3-zB-xMr" secondAttribute="trailing" id="EOc-Ss-3k1"/>
+                            <constraint firstItem="5F3-zB-xMr" firstAttribute="top" secondItem="qxG-WU-iDA" secondAttribute="bottom" constant="8" id="krh-Bh-AOp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="currentFlick" id="8gb-CP-s8t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-9M-3Uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2449" y="49"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x8w-HC-0wd">
