@@ -19,8 +19,8 @@ extension Flick {
     @NSManaged var flickIsCollectionItem: NSNumber?
     @NSManaged var flickReleaseDate: NSDate?
     @NSManaged var flickSummary: String?
-    @NSManaged var flickTitle: String?
-    @NSManaged var flickGenre: String?
+    @NSManaged var flickTitle: String
+    @NSManaged var flickGenre: String
     @NSManaged var relationshipToCollection: Collection?
 
 }

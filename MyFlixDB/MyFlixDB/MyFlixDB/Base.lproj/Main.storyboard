@@ -82,7 +82,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="jW7-oW-Qwu" style="IBUITableViewCellStyleDefault" id="frs-FB-gpJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flickCell" textLabel="jW7-oW-Qwu" style="IBUITableViewCellStyleDefault" id="frs-FB-gpJ">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="frs-FB-gpJ" id="R09-nE-eqG">
@@ -99,7 +99,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="emg-Fh-tgU" kind="show" id="VKA-a8-dvs"/>
+                                            <segue destination="emg-Fh-tgU" kind="show" identifier="segueEditFlick" id="VKA-a8-dvs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -124,6 +124,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="genreTitlesTableView" destination="7Ey-qy-3QM" id="XU7-VX-R3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cai-Ab-gNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="2449" y="-620"/>
         </scene>
-        <!--currentFlick-->
+        <!--currentTitle-->
         <scene sceneID="Z2K-xL-1iA">
             <objects>
-                <viewController id="emg-Fh-tgU" sceneMemberID="viewController">
+                <viewController id="emg-Fh-tgU" customClass="FlickViewController" customModule="MyFlixDB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qxG-WU-iDA"/>
                         <viewControllerLayoutGuide type="bottom" id="6vz-Qe-KZr"/>
@@ -199,8 +202,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-zB-xMr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-zB-xMr">
                                 <rect key="frame" x="20" y="72" width="560" height="88"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="2Gy-jI-aq9"/>
                                 </constraints>
@@ -216,7 +220,7 @@
                             <constraint firstItem="5F3-zB-xMr" firstAttribute="top" secondItem="qxG-WU-iDA" secondAttribute="bottom" constant="8" id="krh-Bh-AOp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="currentFlick" id="8gb-CP-s8t"/>
+                    <navigationItem key="navigationItem" title="currentTitle" id="8gb-CP-s8t"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-9M-3Uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

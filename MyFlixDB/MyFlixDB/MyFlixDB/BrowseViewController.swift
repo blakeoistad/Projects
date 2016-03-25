@@ -35,14 +35,26 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
         destController.selectedGenre = selectedGenre
         browseTableView.deselectRowAtIndexPath(indexPath!, animated: true)
     }
+    
+    
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(dataManager.genresArray.count) Genres in genreArray")
 //        dataManager.tempAddRecords()
         
+        dataManager.flicksArray = dataManager.fetchFlicks()!
+        dataManager.filterGenreArrays()
+        
+        print("\(dataManager.genresArray.count) Genres in genreArray")
+        print("\(dataManager.flicksArray.count) items in flicksArray")
+        print("\(dataManager.comedyArray.count) items in comedyArray")
+        print("\(dataManager.horrorArray.count) items in horrorArray, including \(dataManager.horrorArray.first!.flickTitle)")
+        
+        dataManager.getArrayDetails()
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

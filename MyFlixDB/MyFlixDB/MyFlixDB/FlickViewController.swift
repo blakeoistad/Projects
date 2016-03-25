@@ -11,11 +11,13 @@ import UIKit
 class FlickViewController: UIViewController {
 
     //MARK: - Properties
+    var selectedFlick: Flick?
     
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = selectedFlick?.flickTitle
     }
 
     override func didReceiveMemoryWarning() {
