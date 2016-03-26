@@ -16,6 +16,12 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var browseTableView: UITableView!
     
+    //MARK: - Interactivity Methods
+    
+    @IBAction func newFlickButtonPressed(sender: UIBarButtonItem) {
+        print("New Flick button pressed")
+    }
+    
     //MARK: - Table View Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,11 +35,15 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destController = segue.destinationViewController as! GenreViewController
-        let indexPath = browseTableView.indexPathForCell(sender as! UITableViewCell)
-        let selectedGenre = dataManager.genresArray[(indexPath?.row)!]
-        destController.selectedGenre = selectedGenre
-        browseTableView.deselectRowAtIndexPath(indexPath!, animated: true)
+        if segue.identifier == "segueAddFlick" {
+            _ = segue.destinationViewController as! NewFlickViewController
+        } else {
+            let destController = segue.destinationViewController as! GenreViewController
+            let indexPath = browseTableView.indexPathForCell(sender as! UITableViewCell)
+            let selectedGenre = dataManager.genresArray[(indexPath?.row)!]
+            destController.selectedGenre = selectedGenre
+            browseTableView.deselectRowAtIndexPath(indexPath!, animated: true)
+        }
     }
     
     
@@ -44,8 +54,8 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
 //        dataManager.tempAddRecords()
         
         dataManager.flicksArray = dataManager.fetchFlicks()!
-        dataManager.filterGenreArrays()
         
+        dataManager.filterGenreArrays()
         print("\(dataManager.genresArray.count) Genres in genreArray")
         print("\(dataManager.flicksArray.count) items in flicksArray")
         print("\(dataManager.comedyArray.count) items in comedyArray")
@@ -54,6 +64,9 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
         dataManager.getArrayDetails()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        dataManager.filterGenreArrays()
+    }
     
 
     override func didReceiveMemoryWarning() {

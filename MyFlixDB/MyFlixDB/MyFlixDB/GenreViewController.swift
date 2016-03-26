@@ -67,37 +67,29 @@ class GenreViewController: UIViewController, UITableViewDataSource, UITableViewD
         let indexPath = genreTitlesTableView.indexPathForCell(sender as! UITableViewCell)
         
         if selectedGenre == "Horror" {
-            let selectedFlick = dataManager.horrorArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.horrorArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         } else if selectedGenre == "Action-Adventure" {
-            let selectedFlick = dataManager.actionAdventureArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.actionAdventureArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         } else if selectedGenre == "Fantasy-Animation" {
-            let selectedFlick = dataManager.fantasyAnimationArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.fantasyAnimationArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         } else if selectedGenre == "Documentary" {
-            let selectedFlick = dataManager.documentaryArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.documentaryArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         } else if selectedGenre == "Drama" {
-            let selectedFlick = dataManager.dramaArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.dramaArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         } else if selectedGenre == "Comedy" {
-            let selectedFlick = dataManager.comedyArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.comedyArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         } else if selectedGenre == "Sci-Fi" {
-            let selectedFlick = dataManager.scifiArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.scifiArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         } else {
-            let selectedFlick = dataManager.mysteryThrillerArray[(indexPath?.row)!].flickTitle
-            print("Selected Item: \(selectedFlick)")
-            destController.selectedFlick?.flickTitle = selectedFlick
+            let selectedFlick = dataManager.mysteryThrillerArray[(indexPath?.row)!]
+            destController.selectedFlick = selectedFlick
         }
         genreTitlesTableView.deselectRowAtIndexPath(indexPath!, animated: true)
     }

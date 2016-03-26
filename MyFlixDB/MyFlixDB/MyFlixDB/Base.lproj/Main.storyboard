@@ -39,7 +39,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ahW-A9-Hbe" kind="show" id="2C9-2I-jcX"/>
+                                            <segue destination="ahW-A9-Hbe" kind="show" identifier="segueGenreList" id="2C9-2I-jcX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -57,7 +57,14 @@
                             <constraint firstItem="DcK-Wx-Uk0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="w72-jU-x2b"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Genres" id="rbX-pn-DzX"/>
+                    <navigationItem key="navigationItem" title="Genres" id="rbX-pn-DzX">
+                        <barButtonItem key="rightBarButtonItem" title="Add Flick" id="f7v-3V-9yU">
+                            <connections>
+                                <action selector="newFlickButtonPressed:" destination="BYZ-38-t0r" id="UUg-lv-8Lr"/>
+                                <segue destination="Tvu-7P-DcO" kind="show" identifier="segueAddFlick" id="3wW-sP-yTn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="browseTableView" destination="DcK-Wx-Uk0" id="kHP-Hr-TA4"/>
                     </connections>
@@ -117,13 +124,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7Ey-qy-3QM" secondAttribute="trailing" constant="-20" id="tAA-zs-Asa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="JJ0-H5-GFb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Drh-kb-VHo">
-                            <connections>
-                                <segue destination="Tvu-7P-DcO" kind="show" identifier="segueAddFlick" id="vu5-jk-rXB"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="JJ0-H5-GFb"/>
                     <connections>
                         <outlet property="genreTitlesTableView" destination="7Ey-qy-3QM" id="XU7-VX-R3c"/>
                     </connections>
@@ -163,6 +164,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="PEz-dh-vBf"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tvu-7P-DcO" id="WLF-2P-lRo"/>
+                                    <outlet property="delegate" destination="Tvu-7P-DcO" id="Nzh-78-deJ"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -185,10 +190,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flickGenrePickerView" destination="5YP-S8-1hn" id="0HI-k4-neA"/>
+                        <outlet property="flickTitleTextField" destination="y7b-g1-lLC" id="sY6-qD-Vnr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xm9-CK-glm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2449" y="-620"/>
+            <point key="canvasLocation" x="1075" y="-995"/>
         </scene>
         <!--currentTitle-->
         <scene sceneID="Z2K-xL-1iA">
@@ -212,15 +221,44 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-Bm-iAw">
+                                <rect key="frame" x="20" y="168" width="560" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="FKm-fn-QGp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title Summary" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YHT-ch-PsN">
+                                <rect key="frame" x="20" y="231" width="560" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="y7C-7x-Loc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YHT-ch-PsN" secondAttribute="trailing" id="4LY-sw-ysE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="5F3-zB-xMr" secondAttribute="leading" id="9g4-Mr-4P6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5F3-zB-xMr" secondAttribute="trailing" id="EOc-Ss-3k1"/>
+                            <constraint firstItem="jBW-Bm-iAw" firstAttribute="top" secondItem="5F3-zB-xMr" secondAttribute="bottom" constant="8" id="Lij-xg-Ndk"/>
+                            <constraint firstItem="YHT-ch-PsN" firstAttribute="top" secondItem="jBW-Bm-iAw" secondAttribute="bottom" constant="8" id="Xop-tY-Zvy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jBW-Bm-iAw" secondAttribute="trailing" id="cln-xD-Ilh"/>
                             <constraint firstItem="5F3-zB-xMr" firstAttribute="top" secondItem="qxG-WU-iDA" secondAttribute="bottom" constant="8" id="krh-Bh-AOp"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="YHT-ch-PsN" secondAttribute="leading" id="p5L-ZG-Ap0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jBW-Bm-iAw" secondAttribute="leading" id="xFp-vI-vM4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="currentTitle" id="8gb-CP-s8t"/>
+                    <connections>
+                        <outlet property="flickDirectorLabel" destination="jBW-Bm-iAw" id="u9K-pG-3n5"/>
+                        <outlet property="flickSummaryTextView" destination="YHT-ch-PsN" id="7i3-zr-SEq"/>
+                        <outlet property="flickTitleLabel" destination="5F3-zB-xMr" id="HSV-CE-leb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-9M-3Uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

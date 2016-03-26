@@ -13,11 +13,19 @@ class FlickViewController: UIViewController {
     //MARK: - Properties
     var selectedFlick: Flick?
     
+    @IBOutlet weak var flickTitleLabel: UILabel!
+    @IBOutlet weak var flickDirectorLabel: UILabel!
+    @IBOutlet weak var flickSummaryTextView: UITextView!
+    
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = selectedFlick?.flickTitle
+        print("\(selectedFlick!.flickTitle)")
+        self.title = selectedFlick!.flickTitle
+        flickTitleLabel.text = selectedFlick!.flickTitle
+        flickDirectorLabel.text = selectedFlick!.flickDirector
+        flickSummaryTextView.text = selectedFlick!.flickSummary
     }
 
     override func didReceiveMemoryWarning() {
