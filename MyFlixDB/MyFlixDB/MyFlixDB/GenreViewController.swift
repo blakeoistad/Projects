@@ -99,9 +99,11 @@ class GenreViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = selectedGenre
-//        print("\(dataManager.flicksArray.first)")
     }
 
+    override func viewDidAppear(animated: Bool) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

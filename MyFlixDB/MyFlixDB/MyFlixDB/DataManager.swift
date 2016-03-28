@@ -92,14 +92,17 @@ class DataManager: NSObject {
     }
     
     func fetchFlicks() -> [Flick]? {
+        
         let fetchRequest :NSFetchRequest! = NSFetchRequest(entityName: "Flick")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "flickTitle", ascending: true)]
         do {
             let tempArray = try managedObjectContext!.executeFetchRequest(fetchRequest) as! [Flick]
-            return tempArray
+            flicksArray = tempArray
+            return flicksArray
         } catch {
             return nil
         }
+        
     }
     
     func getArrayDetails() {
@@ -130,27 +133,54 @@ class DataManager: NSObject {
         }
     }
     
-//    func tempAddRecords() {
-//        let entityDescription :NSEntityDescription! = NSEntityDescription.entityForName("ToDos", inManagedObjectContext: managedObjectContext)
-//        let currentToDo :ToDos! = ToDos(entity: entityDescription, insertIntoManagedObjectContext: managedObjectContext)
-//        currentToDo.todoDescription = "Fold the laundry"
-//        currentToDo.todoComplete = false
-//        currentToDo.todoDateDue = NSDate()
-//        currentToDo.dateEntered = NSDate()
-//        currentToDo.userID = "System"
-//        appDelegate.saveContext()
-//    }
+    func updateHorrorArray(flick: Flick) {
+            print("Adding \(flick.flickTitle) to horrorArray")
+            horrorArray.append(flick)
+    }
     
-//    func fetchToDos() -> [ToDos]? {           //want it to return an array of ToDos
-//        let fetchRequest :NSFetchRequest! = NSFetchRequest(entityName: "ToDos")
-//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "todoDescription", ascending: true)]       //sortdescriptors needs to be an array
-//        do {
-//            let tempArray = try managedObjectContext!.executeFetchRequest(fetchRequest) as! [ToDos]      //wrapping todos in [] because it is an array
-//            return tempArray
-//        } catch {
-//            return nil
-//        }
-//    }
+    func updateActionAdventureArray(flick: Flick) {
+        print("Adding \(flick.flickTitle) to actionAdventureArray")
+        actionAdventureArray.append(flick)
+    }
     
+    func updateFantasyAnimationArray(flick: Flick) {
+        print("Adding \(flick.flickTitle) to fantasyAnimationArray")
+        fantasyAnimationArray.append(flick)
+    }
+    
+    func updateDocumentaryArray(flick: Flick) {
+        print("Adding \(flick.flickTitle) to documentaryArray")
+        documentaryArray.append(flick)
+    }
+    
+    func updateDramaArray(flick: Flick) {
+        print("Adding \(flick.flickTitle) to dramaArray")
+        dramaArray.append(flick)
+    }
+    
+    func updateComedyArray(flick: Flick) {
+        print("Adding \(flick.flickTitle) to comedyArray")
+        comedyArray.append(flick)
+    }
+    
+    func updateSciFiArray(flick: Flick) {
+        print("Adding \(flick.flickTitle) to sciFiArray")
+        scifiArray.append(flick)
+    }
+    
+    func updateMysteryThrillerArray(flick: Flick) {
+        print("Adding \(flick.flickTitle) to mysteryThrillerArray")
+        mysteryThrillerArray.append(flick)
+    }
+    
+    
+    
+    override init() {
+        super.init()
+        self.fetchFlicks()
+        print("First item in flicksArray is \(flicksArray[0].flickTitle)")
+        self.getArrayDetails()
+        self.filterGenreArrays()
+    }
     
 }

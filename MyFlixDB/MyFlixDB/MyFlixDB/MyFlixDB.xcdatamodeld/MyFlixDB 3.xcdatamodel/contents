@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Collection" representedClassName=".Collection" syncable="YES">
+        <attribute name="collectionChildren" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="collectionDateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="collectionDateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="collectionImgNamed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipToFlick" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flick" inverseName="relationshipToCollection" inverseEntity="Flick" syncable="YES"/>
+    </entity>
+    <entity name="Flick" representedClassName=".Flick" syncable="YES">
+        <attribute name="flickDateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="flickDateUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="flickDirector" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flickGenre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flickImgNamed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flickIsCollectionItem" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="flickReleaseDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="flickSummary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flickTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationshipToCollection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Collection" inverseName="relationshipToFlick" inverseEntity="Collection" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Collection" positionX="234" positionY="27" width="128" height="150"/>
+        <element name="Flick" positionX="-54" positionY="18" width="128" height="195"/>
+    </elements>
+</model>

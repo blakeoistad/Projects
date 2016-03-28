@@ -7,16 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     //MARK: - Properties
-    
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var dataManager = DataManager.sharedInstance
     
     var currentFlick: Flick?
+    var selectedGenre: String?
     @IBOutlet weak var flickTitleTextField: UITextField!
     @IBOutlet weak var flickGenrePickerView: UIPickerView!
     
@@ -34,15 +33,67 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return dataManager.genresArray[row]
     }
     
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedValue = dataManager.genresArray[pickerView.selectedRowInComponent(0)]
+        selectedGenre = selectedValue
+        print("Selected: \(selectedGenre)")
+    }
+    
     //MARK: - Data Flow Methods
     
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
         print("Save Button Pressed")
         
-        currentFlick?.flickTitle = flickTitleTextField.text!
-        currentFlick?.flickGenre = "Horror"
-        appDelegate.saveContext()
-        navigationController!.popViewControllerAnimated(true)
+        if currentFlick != nil {
+            print("Option 1")
+            currentFlick!.flickTitle = flickTitleTextField.text!
+            currentFlick!.flickGenre = selectedGenre!
+            currentFlick!.flickDateUpdated = NSDate()
+            dataManager.appDelegate.saveContext()
+            navigationController!.popViewControllerAnimated(true)
+        } else {
+            print("Option 2")
+            let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: dataManager.appDelegate.managedObjectContext)
+            currentFlick = Flick(entity: entityDescription, insertIntoManagedObjectContext: dataManager.appDelegate.managedObjectContext)
+            currentFlick!.flickTitle = flickTitleTextField.text!
+            currentFlick!.flickGenre = selectedGenre!
+            currentFlick!.flickDateEntered = NSDate()
+            
+            if selectedGenre == "Horror" {
+                dataManager.updateHorrorArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+            } else if selectedGenre == "Action-Adventure" {
+                dataManager.updateActionAdventureArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+            } else if selectedGenre == "Fantasy-Animation" {
+                dataManager.updateFantasyAnimationArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+            } else if selectedGenre == "Documentary" {
+                dataManager.updateDocumentaryArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+            } else if selectedGenre == "Drama" {
+                dataManager.updateDramaArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+            } else if selectedGenre == "Comedy" {
+                dataManager.updateComedyArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+            } else if selectedGenre == "Sci-Fi" {
+                dataManager.updateSciFiArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+            } else {
+                dataManager.updateMysteryThrillerArray(currentFlick!)
+                dataManager.appDelegate.saveContext()
+                navigationController!.popViewControllerAnimated(true)
+                
+            }
+        }
     }
     
     //MARK: - Life Cycle Methods
