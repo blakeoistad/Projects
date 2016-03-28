@@ -44,13 +44,19 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
         print("Save Button Pressed")
         
-        if currentFlick != nil {
+        if flickTitleTextField.text == "" {
             print("Option 1")
-            currentFlick!.flickTitle = flickTitleTextField.text!
-            currentFlick!.flickGenre = selectedGenre!
-            currentFlick!.flickDateUpdated = NSDate()
-            dataManager.appDelegate.saveContext()
-            navigationController!.popViewControllerAnimated(true)
+            let alert = UIAlertController(title: "Empty Flick!", message: "Please enter a flick title and genre before saving your new flick!", preferredStyle: .Alert)
+            let confirmAction = UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                print("User pressed OK")
+            })
+            
+            alert.addAction(confirmAction)
+            
+            self.presentViewController(alert, animated: true) {
+                
+            }
+            
         } else {
             print("Option 2")
             let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: dataManager.appDelegate.managedObjectContext)
