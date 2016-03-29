@@ -16,8 +16,12 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     var currentFlick: Flick?
     var selectedGenre: String?
+    var selectedYear: Int?
     @IBOutlet weak var flickTitleTextField: UITextField!
+    @IBOutlet weak var flickDirectorTextField: UITextField!
     @IBOutlet weak var flickGenrePickerView: UIPickerView!
+    @IBOutlet weak var flickReleaseDatePickerView: UIPickerView!
+    @IBOutlet weak var flickSummaryTextView: UITextView!
     
     //MARK: - Picker View Methods
     
@@ -26,18 +30,43 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataManager.genresArray.count
+        
+        if pickerView == flickGenrePickerView {
+            return dataManager.genresArray.count
+        } else {
+            return dataManager.yearsArray.count
+        }
+        
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataManager.genresArray[row]
+        
+        if pickerView == flickGenrePickerView {
+            return dataManager.genresArray[row]
+        } else {
+            return String(dataManager.yearsArray[row])
+        }
+        
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedValue = dataManager.genresArray[pickerView.selectedRowInComponent(0)]
-        selectedGenre = selectedValue
-        print("Selected: \(selectedGenre)")
+        if pickerView == flickGenrePickerView {
+            let selectedValue = dataManager.genresArray[pickerView.selectedRowInComponent(0)]
+            selectedGenre = selectedValue
+            print("Selected: \(selectedGenre)")
+        } else {
+            let selectedValue = dataManager.yearsArray[pickerView.selectedRowInComponent(0)]
+            selectedYear = selectedValue
+            print("Selected: \(selectedYear)")
+        }
+        
+        
     }
+    
+    
+    
+    
+    
     
     //MARK: - Data Flow Methods
     
@@ -50,19 +79,18 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
             let confirmAction = UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
                 print("User pressed OK")
             })
-            
             alert.addAction(confirmAction)
-            
             self.presentViewController(alert, animated: true) {
-                
             }
-            
         } else {
             print("Option 2")
             let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: dataManager.appDelegate.managedObjectContext)
             currentFlick = Flick(entity: entityDescription, insertIntoManagedObjectContext: dataManager.appDelegate.managedObjectContext)
             currentFlick!.flickTitle = flickTitleTextField.text!
             currentFlick!.flickGenre = selectedGenre!
+            currentFlick!.flickDirector = flickDirectorTextField.text!
+            currentFlick!.flickReleaseDate = selectedYear!
+            currentFlick!.flickSummary = flickSummaryTextView.text!
             currentFlick!.flickDateEntered = NSDate()
             
             if selectedGenre == "Horror" {
@@ -108,6 +136,10 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         flickGenrePickerView.dataSource = self
         flickGenrePickerView.delegate = self
+        flickReleaseDatePickerView.dataSource = self
+        flickReleaseDatePickerView.delegate = self
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

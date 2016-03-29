@@ -17,10 +17,10 @@
 		B47FC57F1C7A5065001EDFAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC57E1C7A5065001EDFAF /* DataManager.swift */; };
 		B47FC5811C7A56A6001EDFAF /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC5801C7A56A6001EDFAF /* GenreViewController.swift */; };
 		B47FC5831C7A66A2001EDFAF /* NewFlickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FC5821C7A66A2001EDFAF /* NewFlickViewController.swift */; };
-		B483E79B1CA9BB4400E81E82 /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E7971CA9BB4400E81E82 /* Collection+CoreDataProperties.swift */; };
-		B483E79C1CA9BB4400E81E82 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E7981CA9BB4400E81E82 /* Collection.swift */; };
-		B483E79D1CA9BB4400E81E82 /* Flick+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E7991CA9BB4400E81E82 /* Flick+CoreDataProperties.swift */; };
-		B483E79E1CA9BB4400E81E82 /* Flick.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E79A1CA9BB4400E81E82 /* Flick.swift */; };
+		B483E7A41CA9FA7000E81E82 /* Flick+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E7A01CA9FA7000E81E82 /* Flick+CoreDataProperties.swift */; };
+		B483E7A51CA9FA7000E81E82 /* Flick.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E7A11CA9FA7000E81E82 /* Flick.swift */; };
+		B483E7A61CA9FA7000E81E82 /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E7A21CA9FA7000E81E82 /* Collection+CoreDataProperties.swift */; };
+		B483E7A71CA9FA7000E81E82 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483E7A31CA9FA7000E81E82 /* Collection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +38,11 @@
 		B47FC5801C7A56A6001EDFAF /* GenreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
 		B47FC5821C7A66A2001EDFAF /* NewFlickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFlickViewController.swift; sourceTree = "<group>"; };
 		B483E7961CA9BABA00E81E82 /* MyFlixDB 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MyFlixDB 3.xcdatamodel"; sourceTree = "<group>"; };
-		B483E7971CA9BB4400E81E82 /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B483E7981CA9BB4400E81E82 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		B483E7991CA9BB4400E81E82 /* Flick+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Flick+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B483E79A1CA9BB4400E81E82 /* Flick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flick.swift; sourceTree = "<group>"; };
+		B483E79F1CA9FA3900E81E82 /* MyFlixDB 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MyFlixDB 4.xcdatamodel"; sourceTree = "<group>"; };
+		B483E7A01CA9FA7000E81E82 /* Flick+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Flick+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B483E7A11CA9FA7000E81E82 /* Flick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flick.swift; sourceTree = "<group>"; };
+		B483E7A21CA9FA7000E81E82 /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B483E7A31CA9FA7000E81E82 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +91,10 @@
 		B47FC57D1C7A4E83001EDFAF /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B483E7971CA9BB4400E81E82 /* Collection+CoreDataProperties.swift */,
-				B483E7981CA9BB4400E81E82 /* Collection.swift */,
-				B483E7991CA9BB4400E81E82 /* Flick+CoreDataProperties.swift */,
-				B483E79A1CA9BB4400E81E82 /* Flick.swift */,
+				B483E7A01CA9FA7000E81E82 /* Flick+CoreDataProperties.swift */,
+				B483E7A11CA9FA7000E81E82 /* Flick.swift */,
+				B483E7A21CA9FA7000E81E82 /* Collection+CoreDataProperties.swift */,
+				B483E7A31CA9FA7000E81E82 /* Collection.swift */,
 				B47FC57E1C7A5065001EDFAF /* DataManager.swift */,
 				B47FC56B1C7A4412001EDFAF /* Info.plist */,
 				B47FC5631C7A4412001EDFAF /* MyFlixDB.xcdatamodeld */,
@@ -173,17 +174,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B483E79C1CA9BB4400E81E82 /* Collection.swift in Sources */,
 				B47FC57F1C7A5065001EDFAF /* DataManager.swift in Sources */,
 				B43A06F51CA5BA1D0091BFB9 /* FlickViewController.swift in Sources */,
-				B483E79E1CA9BB4400E81E82 /* Flick.swift in Sources */,
-				B483E79D1CA9BB4400E81E82 /* Flick+CoreDataProperties.swift in Sources */,
 				B47FC5741C7A4CA7001EDFAF /* BrowseViewController.swift in Sources */,
+				B483E7A51CA9FA7000E81E82 /* Flick.swift in Sources */,
 				B47FC5811C7A56A6001EDFAF /* GenreViewController.swift in Sources */,
 				B47FC5651C7A4412001EDFAF /* MyFlixDB.xcdatamodeld in Sources */,
-				B483E79B1CA9BB4400E81E82 /* Collection+CoreDataProperties.swift in Sources */,
+				B483E7A41CA9FA7000E81E82 /* Flick+CoreDataProperties.swift in Sources */,
+				B483E7A71CA9FA7000E81E82 /* Collection.swift in Sources */,
 				B47FC55D1C7A4412001EDFAF /* AppDelegate.swift in Sources */,
 				B47FC5831C7A66A2001EDFAF /* NewFlickViewController.swift in Sources */,
+				B483E7A61CA9FA7000E81E82 /* Collection+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,11 +344,12 @@
 		B47FC5631C7A4412001EDFAF /* MyFlixDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B483E79F1CA9FA3900E81E82 /* MyFlixDB 4.xcdatamodel */,
 				B483E7961CA9BABA00E81E82 /* MyFlixDB 3.xcdatamodel */,
 				B43A06EB1CA5B5390091BFB9 /* MyFlixDB 2.xcdatamodel */,
 				B47FC5641C7A4412001EDFAF /* MyFlixDB.xcdatamodel */,
 			);
-			currentVersion = B483E7961CA9BABA00E81E82 /* MyFlixDB 3.xcdatamodel */;
+			currentVersion = B483E79F1CA9FA3900E81E82 /* MyFlixDB 4.xcdatamodel */;
 			name = MyFlixDB.xcdatamodeld;
 			path = MyFlixDB/MyFlixDB.xcdatamodeld;
 			sourceTree = "<group>";

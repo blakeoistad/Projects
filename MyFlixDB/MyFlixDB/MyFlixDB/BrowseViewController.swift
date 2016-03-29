@@ -51,18 +51,16 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dataManager.tempAddRecords()
         
-//        dataManager.flicksArray = dataManager.fetchFlicks()!
-//        dataManager.getArrayDetails()
+        for year in dataManager.yearsArray {
+            print(year)
+        }
         
-        print("\(dataManager.genresArray.count) Genres in genreArray")
-        print("\(dataManager.flicksArray.count) items in flicksArray")
-        print("\(dataManager.comedyArray.count) items in comedyArray")
-        print("\(dataManager.horrorArray.count) items in horrorArray")
-        
-        
+        for flick in dataManager.flicksArray {
+            print("Title: \(flick.flickTitle) \n Released In: \(flick.flickReleaseDate) \n Genre: \(flick.flickGenre)")
+        }
     }
+    
     
     override func viewDidAppear(animated: Bool) {
     }

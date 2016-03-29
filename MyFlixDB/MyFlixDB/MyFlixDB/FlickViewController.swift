@@ -15,16 +15,24 @@ class FlickViewController: UIViewController {
     
     @IBOutlet weak var flickTitleLabel: UILabel!
     @IBOutlet weak var flickDirectorLabel: UILabel!
+    @IBOutlet weak var flickReleaseDateLabel: UILabel!
     @IBOutlet weak var flickSummaryTextView: UITextView!
     
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(selectedFlick!.flickTitle)")
+        print("Selected: \(selectedFlick!.flickTitle)")
         self.title = selectedFlick!.flickTitle
         flickTitleLabel.text = selectedFlick!.flickTitle
         flickDirectorLabel.text = selectedFlick!.flickDirector
+        
+        if selectedFlick!.flickReleaseDate == 0 {
+            flickReleaseDateLabel.text = "Unknown"
+        } else {
+            flickReleaseDateLabel.text = selectedFlick!.flickReleaseDate.stringValue
+        }
+        
         flickSummaryTextView.text = selectedFlick!.flickSummary
     }
 

@@ -15,11 +15,11 @@ import CoreData
 extension Collection {
 
     @NSManaged var collectionChildren: NSNumber?
+    @NSManaged var collectionDateEntered: NSDate?
+    @NSManaged var collectionDateUpdated: NSDate?
     @NSManaged var collectionImgNamed: String?
     @NSManaged var collectionName: String?
     @NSManaged var collectionType: String?
-    @NSManaged var collectionDateEntered: NSDate?
-    @NSManaged var collectionDateUpdated: NSDate?
     @NSManaged var relationshipToFlick: Flick?
 
 }
