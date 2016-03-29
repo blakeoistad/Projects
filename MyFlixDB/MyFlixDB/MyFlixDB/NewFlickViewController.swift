@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     //MARK: - Properties
     var dataManager = DataManager.sharedInstance
@@ -63,9 +63,24 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
     }
     
+    //MARK: - Interactivity Methods
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if flickSummaryTextView.isFirstResponder() {
+            flickSummaryTextView.resignFirstResponder()
+        } else if flickTitleTextField.isFirstResponder() {
+            flickTitleTextField.resignFirstResponder()
+        } else if flickSummaryTextView.isFirstResponder() {
+            flickSummaryTextView.resignFirstResponder()
+        } else if flickDirectorTextField.isFirstResponder() {
+            flickDirectorTextField.resignFirstResponder()
+        }
+    }
     
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     //MARK: - Data Flow Methods
@@ -138,7 +153,9 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
         flickGenrePickerView.delegate = self
         flickReleaseDatePickerView.dataSource = self
         flickReleaseDatePickerView.delegate = self
-        
+        flickTitleTextField.delegate = self
+        flickDirectorTextField.delegate = self
+        flickSummaryTextView.delegate = self
         
     }
 

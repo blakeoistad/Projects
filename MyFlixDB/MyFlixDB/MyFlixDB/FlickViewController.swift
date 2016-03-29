@@ -17,13 +17,14 @@ class FlickViewController: UIViewController {
     @IBOutlet weak var flickDirectorLabel: UILabel!
     @IBOutlet weak var flickReleaseDateLabel: UILabel!
     @IBOutlet weak var flickSummaryTextView: UITextView!
+    @IBOutlet weak var flickPosterImageView: UIImageView!
     
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Selected: \(selectedFlick!.flickTitle)")
-        self.title = selectedFlick!.flickTitle
+        self.title = ""
         flickTitleLabel.text = selectedFlick!.flickTitle
         flickDirectorLabel.text = selectedFlick!.flickDirector
         
@@ -34,6 +35,31 @@ class FlickViewController: UIViewController {
         }
         
         flickSummaryTextView.text = selectedFlick!.flickSummary
+        
+        
+        //MARK: - Temporary Poster Images
+        
+        if selectedFlick!.flickTitle == "A Beautiful Mind" {
+            flickPosterImageView.image = UIImage(named: "aBeautifulMind")
+        } else if selectedFlick!.flickTitle == "Dumb & Dumber" {
+            flickPosterImageView.image = UIImage(named: "dumbAndDumber")
+        } else if selectedFlick!.flickTitle == "Forgetting Sarah Marshall" {
+            flickPosterImageView.image = UIImage(named: "forgettingSarahMarshall")
+        } else if selectedFlick!.flickTitle == "Jurassic Park" {
+            flickPosterImageView.image = UIImage(named: "jurassicPark")
+        } else if selectedFlick!.flickTitle == "Knocked Up" {
+            flickPosterImageView.image = UIImage(named: "knockedUp")
+        } else if selectedFlick!.flickTitle == "Legend" {
+            flickPosterImageView.image = UIImage(named: "legend")
+        } else if selectedFlick!.flickTitle == "Leprechaun" {
+            flickPosterImageView.image = UIImage(named: "leprechaun")
+        } else if selectedFlick!.flickTitle == "Limelight" {
+            flickPosterImageView.image = UIImage(named: "limelight")
+        } else if selectedFlick!.flickTitle == "Sleuth" {
+            flickPosterImageView.image = UIImage(named: "sleuth")
+        } else {
+            flickPosterImageView.image = nil
+        }
     }
 
     override func didReceiveMemoryWarning() {

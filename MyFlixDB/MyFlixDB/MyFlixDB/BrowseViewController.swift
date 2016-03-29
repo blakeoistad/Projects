@@ -38,7 +38,7 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
         if segue.identifier == "segueAddFlick" {
             _ = segue.destinationViewController as! NewFlickViewController
         } else {
-            let destController = segue.destinationViewController as! GenreViewController
+            let destController = segue.destinationViewController as! FlixViewController
             let indexPath = browseTableView.indexPathForCell(sender as! UITableViewCell)
             let selectedGenre = dataManager.genresArray[(indexPath?.row)!]
             destController.selectedGenre = selectedGenre
@@ -57,7 +57,7 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         for flick in dataManager.flicksArray {
-            print("Title: \(flick.flickTitle) \n Released In: \(flick.flickReleaseDate) \n Genre: \(flick.flickGenre)")
+            print("Title: \(flick.flickTitle) \nReleased In: \(flick.flickReleaseDate) \nGenre: \(flick.flickGenre) \n")
         }
     }
     

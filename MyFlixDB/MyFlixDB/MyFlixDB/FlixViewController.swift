@@ -1,15 +1,15 @@
 //
-//  GenreViewController.swift
+//  FlixViewController.swift
 //  MyFlixDB
 //
-//  Created by Blake Oistad on 2/21/16.
+//  Created by Blake Oistad on 3/28/16.
 //  Copyright © 2016 Blake Oistad. All rights reserved.
 //
 
 import UIKit
 
-class GenreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class FlixViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
     //MARK: - Properties
     var dataManager = DataManager.sharedInstance
     var selectedGenre: String?
@@ -94,19 +94,45 @@ class GenreViewController: UIViewController, UITableViewDataSource, UITableViewD
         genreTitlesTableView.deselectRowAtIndexPath(indexPath!, animated: true)
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+            if editingStyle == .Delete {
+                
+                if selectedGenre == "Horror" {
+                    let flickToDelete = dataManager.horrorArray[indexPath.row]
+                    print("Deleting: \(flickToDelete.flickTitle)")
+                    dataManager.horrorArray.removeAtIndex(indexPath.row)
+                    dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                    dataManager.fetchFlicks()
+                    dataManager.filterGenreArrays()
+                    genreTitlesTableView.reloadData()
+                    
+                }
+                
+                
+            }
+    }
+    
+    
+    //MARK: - Interactivity Methods
+    
+    @IBAction func editButtonPressed(sender: UIBarButtonItem) {
+        print("Edit Button Pressed")
+        genreTitlesTableView.editing = !genreTitlesTableView.editing
+    }
+    
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = selectedGenre
     }
-
+    
     override func viewDidAppear(animated: Bool) {
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
+    
 }
