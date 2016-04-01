@@ -103,9 +103,57 @@ class FlixViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     dataManager.horrorArray.removeAtIndex(indexPath.row)
                     dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
                     dataManager.fetchFlicks()
-                    dataManager.filterGenreArrays()
                     genreTitlesTableView.reloadData()
                     
+                } else if selectedGenre == "Action-Adventure" {
+                    let flickToDelete = dataManager.actionAdventureArray[indexPath.row]
+                    print("Deleting: \(flickToDelete.flickTitle)")
+                    dataManager.actionAdventureArray.removeAtIndex(indexPath.row)
+                    dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                    dataManager.fetchFlicks()
+                    genreTitlesTableView.reloadData()
+                } else if selectedGenre == "Fantasy-Animation" {
+                    let flickToDelete = dataManager.fantasyAnimationArray[indexPath.row]
+                    print("Deleting: \(flickToDelete.flickTitle)")
+                    dataManager.fantasyAnimationArray.removeAtIndex(indexPath.row)
+                    dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                    dataManager.fetchFlicks()
+                    genreTitlesTableView.reloadData()
+                } else if selectedGenre == "Documentary" {
+                    let flickToDelete = dataManager.documentaryArray[indexPath.row]
+                    print("Deleting: \(flickToDelete.flickTitle)")
+                    dataManager.documentaryArray.removeAtIndex(indexPath.row)
+                    dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                    dataManager.fetchFlicks()
+                    genreTitlesTableView.reloadData()
+                } else if selectedGenre == "Drama" {
+                    let flickToDelete = dataManager.dramaArray[indexPath.row]
+                    print("Deleting: \(flickToDelete.flickTitle)")
+                    dataManager.dramaArray.removeAtIndex(indexPath.row)
+                    dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                    dataManager.fetchFlicks()
+                    genreTitlesTableView.reloadData()
+                } else if selectedGenre == "Comedy" {
+                    let flickToDelete = dataManager.comedyArray[indexPath.row]
+                    print("Deleting: \(flickToDelete.flickTitle)")
+                    dataManager.comedyArray.removeAtIndex(indexPath.row)
+                    dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                    dataManager.fetchFlicks()
+                    genreTitlesTableView.reloadData()
+                } else if selectedGenre == "Sci-Fi" {
+                    let flickToDelete = dataManager.scifiArray[indexPath.row]
+                    print("Deleting: \(flickToDelete.flickTitle)")
+                    dataManager.scifiArray.removeAtIndex(indexPath.row)
+                    dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                    dataManager.fetchFlicks()
+                    genreTitlesTableView.reloadData()
+                } else {
+                        let flickToDelete = dataManager.mysteryThrillerArray[indexPath.row]
+                        print("Deleting: \(flickToDelete.flickTitle)")
+                        dataManager.mysteryThrillerArray.removeAtIndex(indexPath.row)
+                        dataManager.appDelegate.managedObjectContext.deleteObject(flickToDelete)
+                        dataManager.fetchFlicks()
+                        genreTitlesTableView.reloadData()
                 }
                 
                 

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
+class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate, UISearchBarDelegate {
 
     //MARK: - Properties
     var dataManager = DataManager.sharedInstance
@@ -17,11 +17,46 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var currentFlick: Flick?
     var selectedGenre: String?
     var selectedYear: Int?
+    var searchString: String?
     @IBOutlet weak var flickTitleTextField: UITextField!
     @IBOutlet weak var flickDirectorTextField: UITextField!
     @IBOutlet weak var flickGenrePickerView: UIPickerView!
     @IBOutlet weak var flickReleaseDatePickerView: UIPickerView!
     @IBOutlet weak var flickSummaryTextView: UITextView!
+    @IBOutlet weak var flickSearchBar: UISearchBar!
+    
+    //MARK: - Search Bar Methods
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if searchBar.text != "" {
+            searchString = searchBar.text!
+            if searchString!.containsString(" ") {
+                let modifiedString = searchString?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+                print("Searching OMDB for \(modifiedString)")
+                dataManager.getDataFromServer(modifiedString!)
+            } else {
+                print("Searching OMDB for \(searchString)")
+                dataManager.getDataFromServer(searchString!)
+            }
+        } else {
+            print("Input a search or add your flick manually below")
+        }
+    }
+    
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = false
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+
     
     //MARK: - Picker View Methods
     

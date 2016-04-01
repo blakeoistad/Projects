@@ -22,7 +22,7 @@ extension Flick {
     @NSManaged var flickIsCollectionItem: NSNumber?
     @NSManaged var flickReleaseDate: NSNumber
     @NSManaged var flickSummary: String?
-    @NSManaged var flickTitle: String
+    @NSManaged var flickTitle: String!
     @NSManaged var relationshipToCollection: Collection?
 
 }

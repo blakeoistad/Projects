@@ -27,6 +27,12 @@ class DataManager: NSObject {
     var mysteryThrillerArray = [Flick]()
     var yearsArray = [Int]()
     
+    var baseURLString = "www.omdbapi.com"
+    var searchString = String()
+    
+    var newFlick = Flick()
+    var currentFlick = Flick()
+    
     func tempAddRecords() {
         let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: managedObjectContext)
         let flick1 :Flick! = Flick(entity: entityDescription, insertIntoManagedObjectContext: managedObjectContext)
@@ -116,6 +122,7 @@ class DataManager: NSObject {
         
     }
     
+    
     func getArrayDetails() {
         print("\(genresArray.count) Genres in genreArray")
         print("\(flicksArray.count) Flicks in flicksArray")
@@ -196,10 +203,54 @@ class DataManager: NSObject {
         for (var i=1900; i<2017; i++) {
             //print("Value is: \(i)")
             yearsArray.append(i)
+            yearsArray.sortInPlace { $0 > $1 }
             appDelegate.saveContext()
         }
     }
     
+    //MARK: - OMDB Methods
+    
+    func parseMovieData(data: NSData) {
+        do {
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
+            let tempDictArray = jsonResult as! NSDictionary
+            
+            newFlick.flickTitle = tempDictArray.objectForKey("Title") as! String
+            
+            print("newFlick = \(newFlick)")
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "receivedDataFromServer", object: nil))
+            }
+            
+            
+        } catch {
+            print("JSON Parsing Error")
+        }
+    }
+    
+    func getDataFromServer(searchString: String) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        defer {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+        let url = NSURL(string: "https://\(baseURLString)/?t=\(searchString)&y=&plot=short&r=json")
+        let urlRequest = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 30.0)
+        let urlSession = NSURLSession.sharedSession()
+        let task = urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
+            if data != nil {
+                print("Got Data!")
+                self.parseMovieData(data!)
+            } else {
+                print("No Data")
+            }
+        }
+        task.resume()
+    }
+
+    
+    
+    //MARK: - Initializer
     
     override init() {
         super.init()
