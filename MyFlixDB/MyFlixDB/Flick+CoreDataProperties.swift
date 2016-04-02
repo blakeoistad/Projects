@@ -16,12 +16,12 @@ extension Flick {
 
     @NSManaged var flickDateEntered: NSDate
     @NSManaged var flickDateUpdated: NSDate?
-    @NSManaged var flickDirector: String?
+    @NSManaged var flickDirector: String!
     @NSManaged var flickGenre: String
     @NSManaged var flickImgNamed: String?
     @NSManaged var flickIsCollectionItem: NSNumber?
-    @NSManaged var flickReleaseDate: NSNumber
-    @NSManaged var flickSummary: String?
+    @NSManaged var flickReleaseDate: NSNumber!
+    @NSManaged var flickSummary: String!
     @NSManaged var flickTitle: String!
     @NSManaged var relationshipToCollection: Collection?
 

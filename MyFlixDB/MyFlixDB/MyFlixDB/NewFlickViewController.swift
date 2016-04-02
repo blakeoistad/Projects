@@ -180,10 +180,17 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
+    func populateMovieData() {
+        print("Received Movie Data")
+    }
+    
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "populateMovieData", name: "newDataReceived", object: nil)
+        
         flickGenrePickerView.dataSource = self
         flickGenrePickerView.delegate = self
         flickReleaseDatePickerView.dataSource = self

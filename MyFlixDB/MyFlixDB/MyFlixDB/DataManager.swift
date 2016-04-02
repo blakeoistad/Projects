@@ -30,8 +30,7 @@ class DataManager: NSObject {
     var baseURLString = "www.omdbapi.com"
     var searchString = String()
     
-    var newFlick = Flick()
-    var currentFlick = Flick()
+    var flickToTransfer = Flick()
     
     func tempAddRecords() {
         let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: managedObjectContext)
@@ -210,24 +209,103 @@ class DataManager: NSObject {
     
     //MARK: - OMDB Methods
     
-    func parseMovieData(data: NSData) {
+    func parseMovieData(data: NSData) -> Flick {
         do {
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
             let tempDictArray = jsonResult as! NSDictionary
             
-            newFlick.flickTitle = tempDictArray.objectForKey("Title") as! String
+            var newFlick = NSEntityDescription.insertNewObjectForEntityForName("Flick", inManagedObjectContext: appDelegate.managedObjectContext) as! Flick
             
-            print("newFlick = \(newFlick)")
+            newFlick.flickTitle = tempDictArray.objectForKey("Title") as! String
+            newFlick.flickDirector = tempDictArray.objectForKey("Director") as! String
+            newFlick.flickReleaseDate = (tempDictArray.objectForKey("Year") as! NSString).integerValue
+            newFlick.flickSummary = tempDictArray.objectForKey("Plot") as! String
+            
+            let posterURL = tempDictArray.objectForKey("Poster") as! String
+            if posterURL != "" {
+                newFlick.flickImgNamed = posterURL
+                print("Poster URL: \(posterURL)")
+            } else {
+                print("NO POSTER INFORMATION")
+            }
+            
+            
+            var flickGenreString = String()
+            flickGenreString = tempDictArray.objectForKey("Genre") as! String
+            print("Possible Genres: \(flickGenreString)")
+            let separatedString = flickGenreString.componentsSeparatedByString(",")
+            newFlick.flickGenre = separatedString[0]
+            
+            //TODO: - Add instances of Biography and Crime
+            //TODO: - Fix filter method to include hangling for hyphen genres
+          
+            print("\nnewFlick: \nTitle: \(newFlick.flickTitle)\nDirector: \(newFlick.flickDirector)\nReleased In: \(newFlick.flickReleaseDate)\nSummary: \(newFlick.flickSummary)\nGenre: \(newFlick.flickGenre)")
+            
+            appDelegate.saveContext()
+            
+            
+            if newFlick.flickGenre.containsString("Horror") {
+                updateHorrorArray(newFlick)
+            } else if newFlick.flickGenre.containsString("Action") || newFlick.flickGenre.containsString("Adventure") {
+                updateActionAdventureArray(newFlick)
+            } else if newFlick.flickGenre.containsString("Fantasy") || newFlick.flickGenre.containsString("Animation") {
+                updateFantasyAnimationArray(newFlick)
+            } else if newFlick.flickGenre.containsString("Documentary") {
+                updateDocumentaryArray(newFlick)
+            } else if newFlick.flickGenre.containsString("Drama") {
+                updateDramaArray(newFlick)
+            } else if newFlick.flickGenre.containsString("Comedy") {
+                updateComedyArray(newFlick)
+            } else if newFlick.flickGenre.containsString("Sci-Fi") {
+                updateSciFiArray(newFlick)
+            } else if newFlick.flickGenre.containsString("Mystery") || newFlick.flickGenre.containsString("Thriller") {
+                updateMysteryThrillerArray(newFlick)
+            }
+            
+            
             
             dispatch_async(dispatch_get_main_queue()) {
-                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "receivedDataFromServer", object: nil))
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newDataReceived", object: nil))
             }
             
             
         } catch {
             print("JSON Parsing Error")
         }
+        print("Flick to Transfer 2: \(flickToTransfer)")
+        return flickToTransfer
     }
+    
+//    func parseMovieData(data: NSData) {
+//        do {
+//            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
+//            let tempDictArray = jsonResult as! NSDictionary
+//            
+//            let newFlick = NSEntityDescription.insertNewObjectForEntityForName("Flick", inManagedObjectContext: appDelegate.managedObjectContext) as! Flick
+//            
+//            newFlick.flickTitle = tempDictArray.objectForKey("Title") as! String
+//            newFlick.flickDirector = tempDictArray.objectForKey("Director") as! String
+//            newFlick.flickReleaseDate = (tempDictArray.objectForKey("Year") as! NSString).integerValue
+//            newFlick.flickSummary = tempDictArray.objectForKey("Plot") as! String
+//            
+//            var flickGenreString = String()
+//            flickGenreString = tempDictArray.objectForKey("Genre") as! String
+//            let separatedString = flickGenreString.componentsSeparatedByString(",")
+//            newFlick.flickGenre = separatedString[0]
+//            
+//            
+//            print("\nnewFlick: \nTitle: \(newFlick.flickTitle)\nDirector: \(newFlick.flickDirector)\nReleased In: \(newFlick.flickReleaseDate)\nSummary: \(newFlick.flickSummary)\nGenre: \(newFlick.flickGenre)")
+//            
+//            
+//            dispatch_async(dispatch_get_main_queue()) {
+//                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newDataReceived", object: nil))
+//            }
+//            
+//            
+//        } catch {
+//            print("JSON Parsing Error")
+//        }
+//    }
     
     func getDataFromServer(searchString: String) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true

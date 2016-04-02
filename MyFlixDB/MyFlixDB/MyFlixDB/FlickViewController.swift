@@ -31,7 +31,7 @@ class FlickViewController: UIViewController {
         if selectedFlick!.flickReleaseDate == 0 {
             flickReleaseDateLabel.text = "Unknown"
         } else {
-            flickReleaseDateLabel.text = selectedFlick!.flickReleaseDate.stringValue
+            flickReleaseDateLabel.text = selectedFlick!.flickReleaseDate!.stringValue
         }
         
         flickSummaryTextView.text = selectedFlick!.flickSummary
@@ -39,27 +39,35 @@ class FlickViewController: UIViewController {
         
         //MARK: - Temporary Poster Images
         
-        if selectedFlick!.flickTitle == "A Beautiful Mind" {
-            flickPosterImageView.image = UIImage(named: "aBeautifulMind")
-        } else if selectedFlick!.flickTitle == "Dumb & Dumber" {
-            flickPosterImageView.image = UIImage(named: "dumbAndDumber")
-        } else if selectedFlick!.flickTitle == "Forgetting Sarah Marshall" {
-            flickPosterImageView.image = UIImage(named: "forgettingSarahMarshall")
-        } else if selectedFlick!.flickTitle == "Jurassic Park" {
-            flickPosterImageView.image = UIImage(named: "jurassicPark")
-        } else if selectedFlick!.flickTitle == "Knocked Up" {
-            flickPosterImageView.image = UIImage(named: "knockedUp")
-        } else if selectedFlick!.flickTitle == "Legend" {
-            flickPosterImageView.image = UIImage(named: "legend")
-        } else if selectedFlick!.flickTitle == "Leprechaun" {
-            flickPosterImageView.image = UIImage(named: "leprechaun")
-        } else if selectedFlick!.flickTitle == "Limelight" {
-            flickPosterImageView.image = UIImage(named: "limelight")
-        } else if selectedFlick!.flickTitle == "Sleuth" {
-            flickPosterImageView.image = UIImage(named: "sleuth")
-        } else {
-            flickPosterImageView.image = nil
+        if selectedFlick!.flickImgNamed != "" {
+            if let url = NSURL(string: selectedFlick!.flickImgNamed!) {
+                if let data = NSData(contentsOfURL: url) {
+                    flickPosterImageView.image = UIImage(data: data)
+                }
+            }
         }
+        
+//        if selectedFlick!.flickTitle == "A Beautiful Mind" {
+//            flickPosterImageView.image = UIImage(named: "aBeautifulMind")
+//        } else if selectedFlick!.flickTitle == "Dumb & Dumber" {
+//            flickPosterImageView.image = UIImage(named: "dumbAndDumber")
+//        } else if selectedFlick!.flickTitle == "Forgetting Sarah Marshall" {
+//            flickPosterImageView.image = UIImage(named: "forgettingSarahMarshall")
+//        } else if selectedFlick!.flickTitle == "Jurassic Park" {
+//            flickPosterImageView.image = UIImage(named: "jurassicPark")
+//        } else if selectedFlick!.flickTitle == "Knocked Up" {
+//            flickPosterImageView.image = UIImage(named: "knockedUp")
+//        } else if selectedFlick!.flickTitle == "Legend" {
+//            flickPosterImageView.image = UIImage(named: "legend")
+//        } else if selectedFlick!.flickTitle == "Leprechaun" {
+//            flickPosterImageView.image = UIImage(named: "leprechaun")
+//        } else if selectedFlick!.flickTitle == "Limelight" {
+//            flickPosterImageView.image = UIImage(named: "limelight")
+//        } else if selectedFlick!.flickTitle == "Sleuth" {
+//            flickPosterImageView.image = UIImage(named: "sleuth")
+//        } else {
+//            flickPosterImageView.image = nil
+//        }
     }
 
     override func didReceiveMemoryWarning() {
