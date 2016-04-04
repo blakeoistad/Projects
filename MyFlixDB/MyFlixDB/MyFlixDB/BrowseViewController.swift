@@ -19,7 +19,7 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
     //MARK: - Interactivity Methods
     
     @IBAction func newFlickButtonPressed(sender: UIBarButtonItem) {
-        print("New Flick button pressed")
+        print("\n-BrowseVC-\nNew Flick button pressed")
     }
     
     //MARK: - Table View Methods
@@ -32,6 +32,27 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         cell.textLabel!.text = dataManager.genresArray[indexPath.row]
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        var rowHeight = Int(tableView.rowHeight)
+
+        let screenHeight = Int(UIScreen.mainScreen().bounds.height)
+        
+        let genreCount = dataManager.genresArray.count
+        
+        let navBarHeight = Int(self.navigationController!.navigationBar.frame.size.height)
+        
+        let statusBarHeight = Int(UIApplication.sharedApplication().statusBarFrame.size.height)
+        
+        let topAreaHeight = navBarHeight + statusBarHeight
+        
+        let remainderSpace = screenHeight - topAreaHeight
+        
+        rowHeight = remainderSpace / genreCount
+        
+        return CGFloat(rowHeight)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -52,13 +73,15 @@ class BrowseViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for year in dataManager.yearsArray {
-            print(year)
-        }
+//        for year in dataManager.yearsArray {
+//            print("\n-BrowseVC-\n\(year)")
+//        }
         
         for flick in dataManager.flicksArray {
-            print("Title: \(flick.flickTitle) \nReleased In: \(flick.flickReleaseDate) \nGenre: \(flick.flickGenre) \n")
+            print("-BrowseVC-\nTitle: \(flick.flickTitle) \nReleased In: \(flick.flickReleaseDate) \nGenre: \(flick.flickGenre) \n")
         }
+        
+
     }
     
     

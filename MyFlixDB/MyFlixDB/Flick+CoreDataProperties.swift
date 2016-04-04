@@ -2,7 +2,7 @@
 //  Flick+CoreDataProperties.swift
 //  MyFlixDB
 //
-//  Created by Blake Oistad on 3/28/16.
+//  Created by Blake Oistad on 4/4/16.
 //  Copyright © 2016 Blake Oistad. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,15 +14,16 @@ import CoreData
 
 extension Flick {
 
-    @NSManaged var flickDateEntered: NSDate
+    @NSManaged var flickDateEntered: NSDate?
     @NSManaged var flickDateUpdated: NSDate?
-    @NSManaged var flickDirector: String!
+    @NSManaged var flickDirector: String
     @NSManaged var flickGenre: String
-    @NSManaged var flickImgNamed: String?
+    @NSManaged var flickImgNamed: String
     @NSManaged var flickIsCollectionItem: NSNumber?
-    @NSManaged var flickReleaseDate: NSNumber!
-    @NSManaged var flickSummary: String!
-    @NSManaged var flickTitle: String!
+    @NSManaged var flickReleaseDate: NSNumber
+    @NSManaged var flickSummary: String
+    @NSManaged var flickTitle: String
+    @NSManaged var flickRating: String?
     @NSManaged var relationshipToCollection: Collection?
 
 }

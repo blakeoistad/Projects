@@ -30,7 +30,7 @@ class DataManager: NSObject {
     var baseURLString = "www.omdbapi.com"
     var searchString = String()
     
-    var flickToTransfer = Flick()
+    var flickToTransfer : Flick?
     
     func tempAddRecords() {
         let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: managedObjectContext)
@@ -123,25 +123,26 @@ class DataManager: NSObject {
     
     
     func getArrayDetails() {
-        print("\(genresArray.count) Genres in genreArray")
-        print("\(flicksArray.count) Flicks in flicksArray")
-        print("\(horrorArray.count) Flicks in horrorArray")
-        print("\(actionAdventureArray.count) Flicks in actionAdventureArray")
-        print("\(fantasyAnimationArray.count) Flicks in fantasyAnimationArray")
-        print("\(documentaryArray.count) Flicks in documentaryArray")
-        print("\(dramaArray.count) Flicks in dramaArray")
-        print("\(comedyArray.count) Flicks in comedyArray")
-        print("\(scifiArray.count) Flicks in scifiArray")
-        print("\(mysteryThrillerArray.count) Flicks in mysteryThrillerArray")
+        print("-DM- \(genresArray.count) Genres in genreArray")
+        print("-DM- \(flicksArray.count) Flicks in flicksArray")
+        print("-DM- \(horrorArray.count) Flicks in horrorArray")
+        print("-DM- \(actionAdventureArray.count) Flicks in actionAdventureArray")
+        print("-DM- \(fantasyAnimationArray.count) Flicks in fantasyAnimationArray")
+        print("-DM- \(documentaryArray.count) Flicks in documentaryArray")
+        print("-DM- \(dramaArray.count) Flicks in dramaArray")
+        print("-DM- \(comedyArray.count) Flicks in comedyArray")
+        print("-DM- \(scifiArray.count) Flicks in scifiArray")
+        print("-DM- \(mysteryThrillerArray.count) Flicks in mysteryThrillerArray\n")
     }
     
     func filterGenreArrays() {
+        flicksArray.sortInPlace { $0.flickTitle < $1.flickTitle }
         for flick in flicksArray {
             if flick.flickGenre == "Horror" {
                 horrorArray.append(flick)
-            } else if flick.flickGenre == "Action-Adventure" {
+            } else if flick.flickGenre == "Action" || flick.flickGenre == "Adventure" {
                 actionAdventureArray.append(flick)
-            } else if flick.flickGenre == "Fantasy-Animation" {
+            } else if flick.flickGenre == "Fantasy" || flick.flickGenre == "Animation" {
                 fantasyAnimationArray.append(flick)
             } else if flick.flickGenre == "Documentary" {
                 documentaryArray.append(flick)
@@ -151,49 +152,49 @@ class DataManager: NSObject {
                 comedyArray.append(flick)
             } else if flick.flickGenre == "Sci-Fi" {
                 scifiArray.append(flick)
-            } else if flick.flickGenre == "Mystery-Thriller" {
+            } else if flick.flickGenre == "Mystery" || flick.flickGenre == "Thriller" {
                 mysteryThrillerArray.append(flick)
             }
         }
     }
     
     func updateHorrorArray(flick: Flick) {
-            print("Adding \(flick.flickTitle) to horrorArray")
+            print("-DM- Adding \(flick.flickTitle) to horrorArray")
             horrorArray.append(flick)
     }
     
     func updateActionAdventureArray(flick: Flick) {
-        print("Adding \(flick.flickTitle) to actionAdventureArray")
+        print("-DM- Adding \(flick.flickTitle) to actionAdventureArray")
         actionAdventureArray.append(flick)
     }
     
     func updateFantasyAnimationArray(flick: Flick) {
-        print("Adding \(flick.flickTitle) to fantasyAnimationArray")
+        print("-DM- Adding \(flick.flickTitle) to fantasyAnimationArray")
         fantasyAnimationArray.append(flick)
     }
     
     func updateDocumentaryArray(flick: Flick) {
-        print("Adding \(flick.flickTitle) to documentaryArray")
+        print("-DM- Adding \(flick.flickTitle) to documentaryArray")
         documentaryArray.append(flick)
     }
     
     func updateDramaArray(flick: Flick) {
-        print("Adding \(flick.flickTitle) to dramaArray")
+        print("-DM- Adding \(flick.flickTitle) to dramaArray")
         dramaArray.append(flick)
     }
     
     func updateComedyArray(flick: Flick) {
-        print("Adding \(flick.flickTitle) to comedyArray")
+        print("-DM- Adding \(flick.flickTitle) to comedyArray")
         comedyArray.append(flick)
     }
     
     func updateSciFiArray(flick: Flick) {
-        print("Adding \(flick.flickTitle) to sciFiArray")
+        print("-DM- Adding \(flick.flickTitle) to sciFiArray")
         scifiArray.append(flick)
     }
     
     func updateMysteryThrillerArray(flick: Flick) {
-        print("Adding \(flick.flickTitle) to mysteryThrillerArray")
+        print("-DM- Adding \(flick.flickTitle) to mysteryThrillerArray")
         mysteryThrillerArray.append(flick)
     }
     
@@ -210,102 +211,57 @@ class DataManager: NSObject {
     //MARK: - OMDB Methods
     
     func parseMovieData(data: NSData) -> Flick {
+//        flickToTransfer = Flick()
         do {
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
             let tempDictArray = jsonResult as! NSDictionary
             
-            var newFlick = NSEntityDescription.insertNewObjectForEntityForName("Flick", inManagedObjectContext: appDelegate.managedObjectContext) as! Flick
+            flickToTransfer = NSEntityDescription.insertNewObjectForEntityForName("Flick", inManagedObjectContext: appDelegate.managedObjectContext) as! Flick
             
-            newFlick.flickTitle = tempDictArray.objectForKey("Title") as! String
-            newFlick.flickDirector = tempDictArray.objectForKey("Director") as! String
-            newFlick.flickReleaseDate = (tempDictArray.objectForKey("Year") as! NSString).integerValue
-            newFlick.flickSummary = tempDictArray.objectForKey("Plot") as! String
-            
+            flickToTransfer!.flickTitle = tempDictArray.objectForKey("Title") as! String
+            flickToTransfer!.flickDirector = tempDictArray.objectForKey("Director") as! String
+            flickToTransfer!.flickReleaseDate = (tempDictArray.objectForKey("Year") as! NSString).integerValue
+            flickToTransfer!.flickSummary = tempDictArray.objectForKey("Plot") as! String
+            flickToTransfer!.flickImgNamed = tempDictArray.objectForKey("Poster") as! String
             let posterURL = tempDictArray.objectForKey("Poster") as! String
             if posterURL != "" {
-                newFlick.flickImgNamed = posterURL
-                print("Poster URL: \(posterURL)")
+                flickToTransfer!.flickImgNamed = posterURL
             } else {
-                print("NO POSTER INFORMATION")
+                print("-DM- NO POSTER INFORMATION")
             }
             
             
             var flickGenreString = String()
             flickGenreString = tempDictArray.objectForKey("Genre") as! String
-            print("Possible Genres: \(flickGenreString)")
+            print("-DM- Possible Genres: \(flickGenreString)\n")
             let separatedString = flickGenreString.componentsSeparatedByString(",")
-            newFlick.flickGenre = separatedString[0]
-            
-            //TODO: - Add instances of Biography and Crime
-            //TODO: - Fix filter method to include hangling for hyphen genres
-          
-            print("\nnewFlick: \nTitle: \(newFlick.flickTitle)\nDirector: \(newFlick.flickDirector)\nReleased In: \(newFlick.flickReleaseDate)\nSummary: \(newFlick.flickSummary)\nGenre: \(newFlick.flickGenre)")
-            
-            appDelegate.saveContext()
-            
-            
-            if newFlick.flickGenre.containsString("Horror") {
-                updateHorrorArray(newFlick)
-            } else if newFlick.flickGenre.containsString("Action") || newFlick.flickGenre.containsString("Adventure") {
-                updateActionAdventureArray(newFlick)
-            } else if newFlick.flickGenre.containsString("Fantasy") || newFlick.flickGenre.containsString("Animation") {
-                updateFantasyAnimationArray(newFlick)
-            } else if newFlick.flickGenre.containsString("Documentary") {
-                updateDocumentaryArray(newFlick)
-            } else if newFlick.flickGenre.containsString("Drama") {
-                updateDramaArray(newFlick)
-            } else if newFlick.flickGenre.containsString("Comedy") {
-                updateComedyArray(newFlick)
-            } else if newFlick.flickGenre.containsString("Sci-Fi") {
-                updateSciFiArray(newFlick)
-            } else if newFlick.flickGenre.containsString("Mystery") || newFlick.flickGenre.containsString("Thriller") {
-                updateMysteryThrillerArray(newFlick)
+            flickToTransfer!.flickGenre = separatedString[0]
+            if separatedString[0] == "Crime" {
+                flickToTransfer!.flickGenre = "Mystery"
+            } else if separatedString[0] == "Biography" {
+                flickToTransfer!.flickGenre = "Drama"
+            } else {
+                flickToTransfer!.flickGenre = separatedString[0]
             }
+          
+            print("-DM-\nnewFlick: \nTitle: \(flickToTransfer!.flickTitle)\nDirector: \(flickToTransfer!.flickDirector)\nReleased In: \(flickToTransfer!.flickReleaseDate)\nSummary: \(flickToTransfer!.flickSummary)\nGenre: \(flickToTransfer!.flickGenre)\nimgURL: \(flickToTransfer!.flickImgNamed)")
             
+
+//            appDelegate.saveContext()
             
-            
+
             dispatch_async(dispatch_get_main_queue()) {
-                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newDataReceived", object: nil))
+                print("-DM- Transferring \(self.flickToTransfer!.flickTitle)")
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newDataReceived", object: self.flickToTransfer))
             }
             
             
         } catch {
-            print("JSON Parsing Error")
+            print("-DM- JSON Parsing Error")
         }
-        print("Flick to Transfer 2: \(flickToTransfer)")
-        return flickToTransfer
+        return flickToTransfer!
     }
-    
-//    func parseMovieData(data: NSData) {
-//        do {
-//            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
-//            let tempDictArray = jsonResult as! NSDictionary
-//            
-//            let newFlick = NSEntityDescription.insertNewObjectForEntityForName("Flick", inManagedObjectContext: appDelegate.managedObjectContext) as! Flick
-//            
-//            newFlick.flickTitle = tempDictArray.objectForKey("Title") as! String
-//            newFlick.flickDirector = tempDictArray.objectForKey("Director") as! String
-//            newFlick.flickReleaseDate = (tempDictArray.objectForKey("Year") as! NSString).integerValue
-//            newFlick.flickSummary = tempDictArray.objectForKey("Plot") as! String
-//            
-//            var flickGenreString = String()
-//            flickGenreString = tempDictArray.objectForKey("Genre") as! String
-//            let separatedString = flickGenreString.componentsSeparatedByString(",")
-//            newFlick.flickGenre = separatedString[0]
-//            
-//            
-//            print("\nnewFlick: \nTitle: \(newFlick.flickTitle)\nDirector: \(newFlick.flickDirector)\nReleased In: \(newFlick.flickReleaseDate)\nSummary: \(newFlick.flickSummary)\nGenre: \(newFlick.flickGenre)")
-//            
-//            
-//            dispatch_async(dispatch_get_main_queue()) {
-//                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newDataReceived", object: nil))
-//            }
-//            
-//            
-//        } catch {
-//            print("JSON Parsing Error")
-//        }
-//    }
+
     
     func getDataFromServer(searchString: String) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -317,10 +273,10 @@ class DataManager: NSObject {
         let urlSession = NSURLSession.sharedSession()
         let task = urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
             if data != nil {
-                print("Got Data!")
+                print("-DM- Got Data!")
                 self.parseMovieData(data!)
             } else {
-                print("No Data")
+                print("-DM- No Data")
             }
         }
         task.resume()
@@ -335,7 +291,6 @@ class DataManager: NSObject {
 //        self.tempAddRecords()
         self.fillYearsArray()
         self.fetchFlicks()
-        print("First item in flicksArray is \(flicksArray[0].flickTitle)")
         self.filterGenreArrays()
         self.getArrayDetails()
 

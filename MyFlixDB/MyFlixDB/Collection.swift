@@ -2,7 +2,7 @@
 //  Collection.swift
 //  MyFlixDB
 //
-//  Created by Blake Oistad on 3/28/16.
+//  Created by Blake Oistad on 4/4/16.
 //  Copyright © 2016 Blake Oistad. All rights reserved.
 //
 

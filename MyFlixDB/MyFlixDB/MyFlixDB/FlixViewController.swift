@@ -39,23 +39,48 @@ class FlixViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("flickCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("flickCell", forIndexPath: indexPath) as! FlixTableViewCell
+        cell.accessoryType = .DisclosureIndicator
         if selectedGenre == "Horror" {
-            cell.textLabel!.text = dataManager.horrorArray[indexPath.row].flickTitle
+            let currentFlick = dataManager.horrorArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
         } else if selectedGenre == "Action-Adventure" {
-            cell.textLabel!.text = dataManager.actionAdventureArray[indexPath.row].flickTitle
+            let currentFlick = dataManager.actionAdventureArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
         } else if selectedGenre == "Fantasy-Animation" {
-            cell.textLabel!.text = dataManager.fantasyAnimationArray[indexPath.row].flickTitle
+            let currentFlick = dataManager.fantasyAnimationArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
         } else if selectedGenre == "Documentary" {
-            cell.textLabel!.text = dataManager.documentaryArray[indexPath.row].flickTitle
+            let currentFlick = dataManager.documentaryArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
         } else if selectedGenre == "Drama" {
-            cell.textLabel!.text = dataManager.dramaArray[indexPath.row].flickTitle
+            let currentFlick = dataManager.dramaArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
         } else if selectedGenre == "Comedy" {
-            cell.textLabel!.text = dataManager.comedyArray[indexPath.row].flickTitle
+            let currentFlick = dataManager.comedyArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
         } else if selectedGenre == "Sci-Fi" {
-            cell.textLabel!.text = dataManager.scifiArray[indexPath.row].flickTitle
-        } else {
-            cell.textLabel!.text = dataManager.mysteryThrillerArray[indexPath.row].flickTitle
+            let currentFlick = dataManager.scifiArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
+        } else if selectedGenre == "Mystery-Thriller" {
+            let currentFlick = dataManager.mysteryThrillerArray[indexPath.row]
+            cell.flickTitleLabel.text = currentFlick.flickTitle
+            cell.flickReleaseDateLabel.text = String(currentFlick.flickReleaseDate)
+            cell.flickDirectorLabel.text = "Directed by \(currentFlick.flickDirector)"
         }
         return cell
     }
@@ -64,7 +89,7 @@ class FlixViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destController = segue.destinationViewController as! FlickViewController
-        let indexPath = genreTitlesTableView.indexPathForCell(sender as! UITableViewCell)
+        let indexPath = genreTitlesTableView.indexPathForCell(sender as! FlixTableViewCell)
         
         if selectedGenre == "Horror" {
             let selectedFlick = dataManager.horrorArray[(indexPath?.row)!]
@@ -164,7 +189,7 @@ class FlixViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //MARK: - Interactivity Methods
     
     @IBAction func editButtonPressed(sender: UIBarButtonItem) {
-        print("Edit Button Pressed")
+        print("\n-FlixVC-\nEdit Button Pressed")
         genreTitlesTableView.editing = !genreTitlesTableView.editing
     }
     

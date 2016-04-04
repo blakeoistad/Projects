@@ -21,8 +21,8 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var flickTitleTextField: UITextField!
     @IBOutlet weak var flickDirectorTextField: UITextField!
     @IBOutlet weak var flickGenrePickerView: UIPickerView!
-    @IBOutlet weak var flickReleaseDatePickerView: UIPickerView!
     @IBOutlet weak var flickSummaryTextView: UITextView!
+    @IBOutlet weak var flickReleaseDateTextField: UITextField!
     @IBOutlet weak var flickSearchBar: UISearchBar!
     
     //MARK: - Search Bar Methods
@@ -31,15 +31,15 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if searchBar.text != "" {
             searchString = searchBar.text!
             if searchString!.containsString(" ") {
-                let modifiedString = searchString?.stringByReplacingOccurrencesOfString(" ", withString: "+")
-                print("Searching OMDB for \(modifiedString)")
-                dataManager.getDataFromServer(modifiedString!)
+                let modifiedString = searchString!.stringByReplacingOccurrencesOfString(" ", withString: "+")
+                print("\n-NewFlickVC-\nSearching OMDB for \(modifiedString)")
+                dataManager.getDataFromServer(modifiedString)
             } else {
-                print("Searching OMDB for \(searchString)")
+                print("\n-NewFlickVC-\nSearching OMDB for \(searchString)")
                 dataManager.getDataFromServer(searchString!)
             }
         } else {
-            print("Input a search or add your flick manually below")
+            print("Nothing in searchBar")
         }
     }
     
@@ -66,35 +66,20 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        if pickerView == flickGenrePickerView {
-            return dataManager.genresArray.count
-        } else {
-            return dataManager.yearsArray.count
-        }
+        return dataManager.genresArray.count
         
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        if pickerView == flickGenrePickerView {
-            return dataManager.genresArray[row]
-        } else {
-            return String(dataManager.yearsArray[row])
-        }
+        return dataManager.genresArray[row]
         
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == flickGenrePickerView {
-            let selectedValue = dataManager.genresArray[pickerView.selectedRowInComponent(0)]
-            selectedGenre = selectedValue
-            print("Selected: \(selectedGenre)")
-        } else {
-            let selectedValue = dataManager.yearsArray[pickerView.selectedRowInComponent(0)]
-            selectedYear = selectedValue
-            print("Selected: \(selectedYear)")
-        }
-        
+        let selectedValue = dataManager.genresArray[pickerView.selectedRowInComponent(0)]
+        selectedGenre = selectedValue
+        print("\n-NewFlickVC-\nSelected: \(selectedGenre)")
         
     }
     
@@ -121,25 +106,25 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     //MARK: - Data Flow Methods
     
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
-        print("Save Button Pressed")
+        print("\n-NewFlickVC-\nSave Button Pressed")
         
         if flickTitleTextField.text == "" {
-            print("Option 1")
+            print("\n-NewFlickVC-\nOption 1")
             let alert = UIAlertController(title: "Empty Flick!", message: "Please enter a flick title and genre before saving your new flick!", preferredStyle: .Alert)
             let confirmAction = UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
-                print("User pressed OK")
+                print("\n-NewFlickVC-\nUser pressed OK")
             })
             alert.addAction(confirmAction)
             self.presentViewController(alert, animated: true) {
             }
         } else {
-            print("Option 2")
+            print("\n-NewFlickVC-\nOption 2")
             let entityDescription: NSEntityDescription! = NSEntityDescription.entityForName("Flick", inManagedObjectContext: dataManager.appDelegate.managedObjectContext)
             currentFlick = Flick(entity: entityDescription, insertIntoManagedObjectContext: dataManager.appDelegate.managedObjectContext)
             currentFlick!.flickTitle = flickTitleTextField.text!
             currentFlick!.flickGenre = selectedGenre!
             currentFlick!.flickDirector = flickDirectorTextField.text!
-            currentFlick!.flickReleaseDate = selectedYear!
+            currentFlick!.flickReleaseDate = Int(flickReleaseDateTextField.text!)!
             currentFlick!.flickSummary = flickSummaryTextView.text!
             currentFlick!.flickDateEntered = NSDate()
             
@@ -171,7 +156,7 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 dataManager.updateSciFiArray(currentFlick!)
                 dataManager.appDelegate.saveContext()
                 navigationController!.popViewControllerAnimated(true)
-            } else {
+            } else if selectedGenre == "Mystery-Thriller" {
                 dataManager.updateMysteryThrillerArray(currentFlick!)
                 dataManager.appDelegate.saveContext()
                 navigationController!.popViewControllerAnimated(true)
@@ -180,8 +165,44 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    func populateMovieData() {
-        print("Received Movie Data")
+    func populateMovieData(notification: NSNotification) {
+        let flickReceived = notification.object as! Flick
+        let receivedTitle = flickReceived.flickTitle
+        let flickYear = flickReceived.flickReleaseDate
+        print("Received: \(receivedTitle)")
+        
+        let alert = UIAlertController(title: "Found \(receivedTitle)!", message: "If everything looks good, press Save!", preferredStyle: .Alert)
+        let confirmAction = UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+            print("\n-NewFlickVC-\nUser pressed OK")
+            self.flickSearchBar.resignFirstResponder()
+        })
+        alert.addAction(confirmAction)
+        self.presentViewController(alert, animated: true) {
+        }
+        
+        flickTitleTextField.text = flickReceived.flickTitle
+        flickDirectorTextField.text = flickReceived.flickDirector
+        flickSummaryTextView.text = flickReceived.flickSummary
+        flickReleaseDateTextField.text = String(flickReceived.flickReleaseDate)
+        
+        if flickReceived.flickGenre == "Horror" {
+            flickGenrePickerView.selectRow(0, inComponent: 0, animated: true)
+        } else if flickReceived.flickGenre == "Action" || flickReceived.flickGenre == "Adventure" {
+            flickGenrePickerView.selectRow(1, inComponent: 0, animated: true)
+        } else if flickReceived.flickGenre == "Fantasy" || flickReceived.flickGenre == "Animation" {
+            flickGenrePickerView.selectRow(2, inComponent: 0, animated: true)
+        } else if flickReceived.flickGenre == "Documentary" {
+            flickGenrePickerView.selectRow(3, inComponent: 0, animated: true)
+        } else if flickReceived.flickGenre == "Drama" {
+            flickGenrePickerView.selectRow(4, inComponent: 0, animated: true)
+        } else if flickReceived.flickGenre == "Comedy" {
+            flickGenrePickerView.selectRow(5, inComponent: 0, animated: true)
+        } else if flickReceived.flickGenre == "Sci-Fi" {
+            flickGenrePickerView.selectRow(6, inComponent: 0, animated: true)
+        } else if flickReceived.flickGenre == "Mystery" || flickReceived.flickGenre == "Thriller" {
+            flickGenrePickerView.selectRow(7, inComponent: 0, animated: true)
+        }
+
     }
     
     //MARK: - Life Cycle Methods
@@ -189,12 +210,10 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "populateMovieData", name: "newDataReceived", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "populateMovieData:", name: "newDataReceived", object: dataManager.flickToTransfer)
         
         flickGenrePickerView.dataSource = self
         flickGenrePickerView.delegate = self
-        flickReleaseDatePickerView.dataSource = self
-        flickReleaseDatePickerView.delegate = self
         flickTitleTextField.delegate = self
         flickDirectorTextField.delegate = self
         flickSummaryTextView.delegate = self
