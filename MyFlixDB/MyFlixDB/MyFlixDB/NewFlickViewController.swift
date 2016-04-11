@@ -176,6 +176,7 @@ class NewFlickViewController: UIViewController, UIPickerViewDataSource, UIPicker
             print("\n-NewFlickVC-\nUser pressed OK")
             self.flickSearchBar.resignFirstResponder()
         })
+        
         alert.addAction(confirmAction)
         self.presentViewController(alert, animated: true) {
         }

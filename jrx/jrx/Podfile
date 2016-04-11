@@ -1,0 +1,14 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'jrx' do
+pod 'ReachabilitySwift'
+end
+
+target 'jrxTests' do
+pod 'ReachabilitySwift'
+end
+
+target 'jrxUITests' do
+pod 'ReachabilitySwift'
+end

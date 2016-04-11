@@ -1,0 +1,6 @@
+framework module Pods_jrxUITests {
+  umbrella header "Pods-jrxUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
