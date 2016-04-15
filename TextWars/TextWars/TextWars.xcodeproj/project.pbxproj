@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B46434501CBDEFC500377EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B464344F1CBDEFC500377EE6 /* AppDelegate.swift */; };
+		B46434521CBDEFC500377EE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46434511CBDEFC500377EE6 /* ViewController.swift */; };
+		B46434551CBDEFC500377EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B46434531CBDEFC500377EE6 /* Main.storyboard */; };
+		B46434581CBDEFC500377EE6 /* TextWars.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B46434561CBDEFC500377EE6 /* TextWars.xcdatamodeld */; };
+		B464345A1CBDEFC500377EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B46434591CBDEFC500377EE6 /* Assets.xcassets */; };
+		B464345D1CBDEFC500377EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B464345B1CBDEFC500377EE6 /* LaunchScreen.storyboard */; };
+		B46434681CBDEFC500377EE6 /* TextWarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46434671CBDEFC500377EE6 /* TextWarsTests.swift */; };
+		B46434731CBDEFC500377EE6 /* TextWarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46434721CBDEFC500377EE6 /* TextWarsUITests.swift */; };
+		B46434811CBDF28600377EE6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46434801CBDF28600377EE6 /* GameViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B46434641CBDEFC500377EE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B46434441CBDEFC500377EE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B464344B1CBDEFC500377EE6;
+			remoteInfo = TextWars;
+		};
+		B464346F1CBDEFC500377EE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B46434441CBDEFC500377EE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B464344B1CBDEFC500377EE6;
+			remoteInfo = TextWars;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B464344C1CBDEFC500377EE6 /* TextWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B464344F1CBDEFC500377EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B46434511CBDEFC500377EE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B46434541CBDEFC500377EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B46434571CBDEFC500377EE6 /* TextWars.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TextWars.xcdatamodel; sourceTree = "<group>"; };
+		B46434591CBDEFC500377EE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B464345C1CBDEFC500377EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B464345E1CBDEFC500377EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B46434631CBDEFC500377EE6 /* TextWarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextWarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B46434671CBDEFC500377EE6 /* TextWarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWarsTests.swift; sourceTree = "<group>"; };
+		B46434691CBDEFC500377EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B464346E1CBDEFC500377EE6 /* TextWarsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextWarsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B46434721CBDEFC500377EE6 /* TextWarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWarsUITests.swift; sourceTree = "<group>"; };
+		B46434741CBDEFC500377EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B46434801CBDF28600377EE6 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B46434491CBDEFC500377EE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B46434601CBDEFC500377EE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B464346B1CBDEFC500377EE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B46434431CBDEFC500377EE6 = {
+			isa = PBXGroup;
+			children = (
+				B464344E1CBDEFC500377EE6 /* TextWars */,
+				B46434661CBDEFC500377EE6 /* TextWarsTests */,
+				B46434711CBDEFC500377EE6 /* TextWarsUITests */,
+				B464344D1CBDEFC500377EE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B464344D1CBDEFC500377EE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B464344C1CBDEFC500377EE6 /* TextWars.app */,
+				B46434631CBDEFC500377EE6 /* TextWarsTests.xctest */,
+				B464346E1CBDEFC500377EE6 /* TextWarsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B464344E1CBDEFC500377EE6 /* TextWars */ = {
+			isa = PBXGroup;
+			children = (
+				B464344F1CBDEFC500377EE6 /* AppDelegate.swift */,
+				B46434511CBDEFC500377EE6 /* ViewController.swift */,
+				B46434801CBDF28600377EE6 /* GameViewController.swift */,
+				B46434531CBDEFC500377EE6 /* Main.storyboard */,
+				B46434591CBDEFC500377EE6 /* Assets.xcassets */,
+				B464345B1CBDEFC500377EE6 /* LaunchScreen.storyboard */,
+				B464345E1CBDEFC500377EE6 /* Info.plist */,
+				B46434561CBDEFC500377EE6 /* TextWars.xcdatamodeld */,
+			);
+			path = TextWars;
+			sourceTree = "<group>";
+		};
+		B46434661CBDEFC500377EE6 /* TextWarsTests */ = {
+			isa = PBXGroup;
+			children = (
+				B46434671CBDEFC500377EE6 /* TextWarsTests.swift */,
+				B46434691CBDEFC500377EE6 /* Info.plist */,
+			);
+			path = TextWarsTests;
+			sourceTree = "<group>";
+		};
+		B46434711CBDEFC500377EE6 /* TextWarsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B46434721CBDEFC500377EE6 /* TextWarsUITests.swift */,
+				B46434741CBDEFC500377EE6 /* Info.plist */,
+			);
+			path = TextWarsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B464344B1CBDEFC500377EE6 /* TextWars */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B46434771CBDEFC500377EE6 /* Build configuration list for PBXNativeTarget "TextWars" */;
+			buildPhases = (
+				B46434481CBDEFC500377EE6 /* Sources */,
+				B46434491CBDEFC500377EE6 /* Frameworks */,
+				B464344A1CBDEFC500377EE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextWars;
+			productName = TextWars;
+			productReference = B464344C1CBDEFC500377EE6 /* TextWars.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B46434621CBDEFC500377EE6 /* TextWarsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B464347A1CBDEFC500377EE6 /* Build configuration list for PBXNativeTarget "TextWarsTests" */;
+			buildPhases = (
+				B464345F1CBDEFC500377EE6 /* Sources */,
+				B46434601CBDEFC500377EE6 /* Frameworks */,
+				B46434611CBDEFC500377EE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B46434651CBDEFC500377EE6 /* PBXTargetDependency */,
+			);
+			name = TextWarsTests;
+			productName = TextWarsTests;
+			productReference = B46434631CBDEFC500377EE6 /* TextWarsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B464346D1CBDEFC500377EE6 /* TextWarsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B464347D1CBDEFC500377EE6 /* Build configuration list for PBXNativeTarget "TextWarsUITests" */;
+			buildPhases = (
+				B464346A1CBDEFC500377EE6 /* Sources */,
+				B464346B1CBDEFC500377EE6 /* Frameworks */,
+				B464346C1CBDEFC500377EE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B46434701CBDEFC500377EE6 /* PBXTargetDependency */,
+			);
+			name = TextWarsUITests;
+			productName = TextWarsUITests;
+			productReference = B464346E1CBDEFC500377EE6 /* TextWarsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B46434441CBDEFC500377EE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Blake Oistad";
+				TargetAttributes = {
+					B464344B1CBDEFC500377EE6 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					B46434621CBDEFC500377EE6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = B464344B1CBDEFC500377EE6;
+					};
+					B464346D1CBDEFC500377EE6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = B464344B1CBDEFC500377EE6;
+					};
+				};
+			};
+			buildConfigurationList = B46434471CBDEFC500377EE6 /* Build configuration list for PBXProject "TextWars" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B46434431CBDEFC500377EE6;
+			productRefGroup = B464344D1CBDEFC500377EE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B464344B1CBDEFC500377EE6 /* TextWars */,
+				B46434621CBDEFC500377EE6 /* TextWarsTests */,
+				B464346D1CBDEFC500377EE6 /* TextWarsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B464344A1CBDEFC500377EE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B464345D1CBDEFC500377EE6 /* LaunchScreen.storyboard in Resources */,
+				B464345A1CBDEFC500377EE6 /* Assets.xcassets in Resources */,
+				B46434551CBDEFC500377EE6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B46434611CBDEFC500377EE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B464346C1CBDEFC500377EE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B46434481CBDEFC500377EE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B46434811CBDF28600377EE6 /* GameViewController.swift in Sources */,
+				B46434521CBDEFC500377EE6 /* ViewController.swift in Sources */,
+				B46434581CBDEFC500377EE6 /* TextWars.xcdatamodeld in Sources */,
+				B46434501CBDEFC500377EE6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B464345F1CBDEFC500377EE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B46434681CBDEFC500377EE6 /* TextWarsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B464346A1CBDEFC500377EE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B46434731CBDEFC500377EE6 /* TextWarsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B46434651CBDEFC500377EE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B464344B1CBDEFC500377EE6 /* TextWars */;
+			targetProxy = B46434641CBDEFC500377EE6 /* PBXContainerItemProxy */;
+		};
+		B46434701CBDEFC500377EE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B464344B1CBDEFC500377EE6 /* TextWars */;
+			targetProxy = B464346F1CBDEFC500377EE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B46434531CBDEFC500377EE6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B46434541CBDEFC500377EE6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B464345B1CBDEFC500377EE6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B464345C1CBDEFC500377EE6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B46434751CBDEFC500377EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B46434761CBDEFC500377EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B46434781CBDEFC500377EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TextWars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.TextWars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B46434791CBDEFC500377EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TextWars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.TextWars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B464347B1CBDEFC500377EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TextWarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.TextWarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextWars.app/TextWars";
+			};
+			name = Debug;
+		};
+		B464347C1CBDEFC500377EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TextWarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.TextWarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextWars.app/TextWars";
+			};
+			name = Release;
+		};
+		B464347E1CBDEFC500377EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TextWarsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.TextWarsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TextWars;
+			};
+			name = Debug;
+		};
+		B464347F1CBDEFC500377EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TextWarsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeoistad.TextWarsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TextWars;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B46434471CBDEFC500377EE6 /* Build configuration list for PBXProject "TextWars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B46434751CBDEFC500377EE6 /* Debug */,
+				B46434761CBDEFC500377EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B46434771CBDEFC500377EE6 /* Build configuration list for PBXNativeTarget "TextWars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B46434781CBDEFC500377EE6 /* Debug */,
+				B46434791CBDEFC500377EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B464347A1CBDEFC500377EE6 /* Build configuration list for PBXNativeTarget "TextWarsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B464347B1CBDEFC500377EE6 /* Debug */,
+				B464347C1CBDEFC500377EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B464347D1CBDEFC500377EE6 /* Build configuration list for PBXNativeTarget "TextWarsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B464347E1CBDEFC500377EE6 /* Debug */,
+				B464347F1CBDEFC500377EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B46434561CBDEFC500377EE6 /* TextWars.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B46434571CBDEFC500377EE6 /* TextWars.xcdatamodel */,
+			);
+			currentVersion = B46434571CBDEFC500377EE6 /* TextWars.xcdatamodel */;
+			path = TextWars.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B46434441CBDEFC500377EE6 /* Project object */;
+}

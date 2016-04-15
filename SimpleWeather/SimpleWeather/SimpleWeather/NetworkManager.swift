@@ -1,6 +1,6 @@
 //
 //  NetworkManager.swift
-//  jrx
+//  SimpleWeather
 //
 //  Created by Blake Oistad on 4/11/16.
 //  Copyright © 2016 Blake Oistad. All rights reserved.
@@ -10,11 +10,10 @@ import UIKit
 import ReachabilitySwift
 
 class NetworkManager: NSObject {
-
-    static let sharedInstance = NetworkManager()
     
     //MARK: - Properties
     
+    static let sharedInstance = NetworkManager()
     var serverReach: Reachability?
     var serverAvailable = false
     
@@ -39,7 +38,7 @@ class NetworkManager: NSObject {
         
         do {
             serverReach = try Reachability.reachabilityForInternetConnection()
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: serverReach)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: nil)
             do{
                 try serverReach?.startNotifier()
             }catch{
@@ -51,4 +50,5 @@ class NetworkManager: NSObject {
         }
     }
     
+
 }

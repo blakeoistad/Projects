@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-SimpleWeather.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SimpleWeatherTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SimpleWeatherUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReachabilitySwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9B318B61FDFBEA179C4484C46F0E7D6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A08FCC9E07DAF0737836887A24E07A13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4C2D08104FFD820103B517346D350D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8197D11E0D1E80AA8809E1260C37243</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

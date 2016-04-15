@@ -1,0 +1,14 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'SimpleWeather' do
+pod 'ReachabilitySwift'
+end
+
+target 'SimpleWeatherTests' do
+pod 'ReachabilitySwift'
+end
+
+target 'SimpleWeatherUITests' do
+pod 'ReachabilitySwift'
+end
