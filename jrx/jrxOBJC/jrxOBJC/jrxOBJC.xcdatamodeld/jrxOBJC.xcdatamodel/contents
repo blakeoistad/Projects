@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <entity name="Episode" representedClassName=".Episode" syncable="YES">
+    <entity name="Episode" representedClassName="Episode" syncable="YES">
         <attribute name="episodeAudioURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="episodeDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="episodeGuests" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,9 +9,9 @@
         <attribute name="episodeReleaseDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="episodeState" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="episodeTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="episodeTrackPlacement" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="episodeTrackPlace" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Episode" positionX="-54" positionY="-9" width="128" height="180"/>
+        <element name="Episode" positionX="-63" positionY="-18" width="128" height="180"/>
     </elements>
 </model>

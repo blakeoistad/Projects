@@ -21,4 +21,5 @@ class LocationsManager: NSObject, CLLocationManagerDelegate {
     
     //MARK: - Location Methods
     
+    
 }
