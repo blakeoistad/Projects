@@ -24,10 +24,10 @@ class NetworkManager: NSObject {
         let reach = note.object as! Reachability
         serverAvailable = !(reach.currentReachabilityStatus == .NotReachable)
         if serverAvailable {
-            print("NetworkManager:\n------------------Server Available")
+            print("NetworkManager:\n------------------Server Available\n")
             NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "networkConnected", object: nil))
         } else {
-            print("NetworkManager:\n------------------Server Unavailable")
+            print("NetworkManager:\n------------------Server Unavailable\n")
         }
     }
     
@@ -35,7 +35,7 @@ class NetworkManager: NSObject {
     
     override init() {
         super.init()
-        print("NetworkManager:\n-Starting Network Manager...\n")
+        print("NetworkManager:\n-Starting Network Manager...")
         
         do {
             serverReach = try Reachability.reachabilityForInternetConnection()

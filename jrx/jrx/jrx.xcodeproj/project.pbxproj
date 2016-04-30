@@ -22,8 +22,8 @@
 		B4613BD11CBB1E4A002A156E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4613BD01CBB1E4A002A156E /* DataManager.swift */; };
 		B4613BD31CBB1E61002A156E /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4613BD21CBB1E61002A156E /* FeedManager.swift */; };
 		B48B007F1CBC3B090040D7B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48B007E1CBC3B090040D7B4 /* MainViewController.swift */; };
-		B4A12BFB1CD518BA009BB343 /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A12BF91CD518BA009BB343 /* Episode+CoreDataProperties.swift */; };
-		B4A12BFC1CD518BA009BB343 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A12BFA1CD518BA009BB343 /* Episode.swift */; };
+		B4A12C001CD52772009BB343 /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A12BFE1CD52772009BB343 /* Episode+CoreDataProperties.swift */; };
+		B4A12C011CD52772009BB343 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A12BFF1CD52772009BB343 /* Episode.swift */; };
 		ECBF76348B6A1CC2C81AEA6C /* Pods_jrxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F175CBB4AB308A684CE810AD /* Pods_jrxTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +70,9 @@
 		B4613BD01CBB1E4A002A156E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../DataManager.swift; sourceTree = "<group>"; };
 		B4613BD21CBB1E61002A156E /* FeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedManager.swift; path = ../FeedManager.swift; sourceTree = "<group>"; };
 		B48B007E1CBC3B090040D7B4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		B4A12BF91CD518BA009BB343 /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B4A12BFA1CD518BA009BB343 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		B4A12BFD1CD52749009BB343 /* jrx 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "jrx 2.xcdatamodel"; sourceTree = "<group>"; };
+		B4A12BFE1CD52772009BB343 /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B4A12BFF1CD52772009BB343 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		EA6A56AC89D0192D54DB4454 /* Pods_jrx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jrx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF34CF2AC440F29B760583C /* Pods-jrxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jrxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jrxUITests/Pods-jrxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F175CBB4AB308A684CE810AD /* Pods_jrxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jrxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,8 +202,8 @@
 		B4613BD41CBB1E78002A156E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B4A12BF91CD518BA009BB343 /* Episode+CoreDataProperties.swift */,
-				B4A12BFA1CD518BA009BB343 /* Episode.swift */,
+				B4A12BFE1CD52772009BB343 /* Episode+CoreDataProperties.swift */,
+				B4A12BFF1CD52772009BB343 /* Episode.swift */,
 				B409B9101CBC3EBB00BBA7CE /* NetworkManager.swift */,
 				B4613BD21CBB1E61002A156E /* FeedManager.swift */,
 				B4613BD01CBB1E4A002A156E /* DataManager.swift */,
@@ -476,10 +477,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4A12BFB1CD518BA009BB343 /* Episode+CoreDataProperties.swift in Sources */,
+				B4A12C001CD52772009BB343 /* Episode+CoreDataProperties.swift in Sources */,
 				B409B9111CBC3EBB00BBA7CE /* NetworkManager.swift in Sources */,
 				B409B9151CBC40C800BBA7CE /* PlayerViewController.swift in Sources */,
-				B4A12BFC1CD518BA009BB343 /* Episode.swift in Sources */,
+				B4A12C011CD52772009BB343 /* Episode.swift in Sources */,
 				B4613BD31CBB1E61002A156E /* FeedManager.swift in Sources */,
 				B4613BD11CBB1E4A002A156E /* DataManager.swift in Sources */,
 				B409B9131CBC401000BBA7CE /* PlayerManager.swift in Sources */,
@@ -746,9 +747,10 @@
 		B4613BA61CBB1E05002A156E /* jrx.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B4A12BFD1CD52749009BB343 /* jrx 2.xcdatamodel */,
 				B4613BA71CBB1E05002A156E /* jrx.xcdatamodel */,
 			);
-			currentVersion = B4613BA71CBB1E05002A156E /* jrx.xcdatamodel */;
+			currentVersion = B4A12BFD1CD52749009BB343 /* jrx 2.xcdatamodel */;
 			path = jrx.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

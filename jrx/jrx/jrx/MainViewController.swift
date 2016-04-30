@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        feedManager.refreshEpisodes()
     }
 
     override func didReceiveMemoryWarning() {
